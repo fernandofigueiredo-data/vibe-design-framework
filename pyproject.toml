@@ -1,6 +1,6 @@
 [project]
 name = "vibe-design"
-version = "0.1.0"
+version = "1.0.0"
 description = "Framework de vibe design: captura fiel de referências, extração de design system e criação de sites verificáveis."
 readme = "README.md"
 requires-python = ">=3.11"

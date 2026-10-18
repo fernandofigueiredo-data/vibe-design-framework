@@ -1,7 +1,7 @@
 {
   "name": "vibe-design",
   "displayName": "Vibe Design",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Captura fiel de sites de referência, extração de design system verificável e criação de sites por etapas, tudo em PT-BR.",
   "author": {
     "name": "Fernando Figueiredo"
