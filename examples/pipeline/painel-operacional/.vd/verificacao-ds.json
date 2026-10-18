@@ -1,0 +1,88 @@
+{
+  "pasta": "/Users/fernandofigueiredo/Documents/fundamentos-de-vibe-design/vibe-design-framework/examples/pipeline/painel-operacional",
+  "criterios": {
+    "A1": {
+      "aprovado": true,
+      "alterados": []
+    },
+    "A2": {
+      "aprovado": true,
+      "sem_ancora": [],
+      "ancoras_quebradas": []
+    },
+    "A3": {
+      "aprovado": true,
+      "encontrado": [
+        "hero",
+        "tipografia",
+        "cores",
+        "componentes",
+        "layout",
+        "movimento",
+        "icones"
+      ],
+      "esperado": [
+        "hero",
+        "tipografia",
+        "cores",
+        "componentes",
+        "layout",
+        "movimento",
+        "icones"
+      ]
+    },
+    "A4": {
+      "aprovado": true,
+      "diferenca": null
+    },
+    "A5": {
+      "aprovado": true,
+      "inventadas": [],
+      "classes_documentacao": [
+        "ds-linha",
+        "ds-nome",
+        "ds-rotulo"
+      ],
+      "documentacao_sem_definicao": []
+    },
+    "A6": {
+      "aprovado": true,
+      "cores_fora_da_fonte": []
+    },
+    "A7": {
+      "aprovado": true,
+      "fontes_fora_da_fonte": [],
+      "keyframes_fora_da_fonte": []
+    },
+    "A8": {
+      "aprovado": true,
+      "problemas": [],
+      "estilos_faltando": []
+    },
+    "A9": {
+      "aprovado": true,
+      "referencias_quebradas": [],
+      "duplicadas": [],
+      "inline": [],
+      "atributos_style_fora_da_fonte": []
+    },
+    "A10": {
+      "aprovado": true,
+      "faltando": [],
+      "a_mais": [],
+      "sem_descricao": []
+    },
+    "A11": {
+      "aprovado": true,
+      "lang": "pt-br",
+      "fonte_em_portugues": true,
+      "nao_traduzidos": []
+    },
+    "A12": {
+      "aprovado": true,
+      "fora_da_faixa": [],
+      "transbordos": []
+    }
+  },
+  "aprovado": true
+}

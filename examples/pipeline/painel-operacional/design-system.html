@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system · Serra Azul</title>
+<meta name="description" content="Design system do painel operacional Serra Azul: tipografia, cores, componentes, layout, movimento e ícones extraídos do código-fonte.">
+<!-- fontes IBM Plex Sans e IBM Plex Mono, servidas localmente -->
+<link rel="stylesheet" href="assets/fontes_b23741a9942d.css">
+<!-- runtime do Tailwind CSS 4 (gera no navegador as classes utilitárias e o tema abaixo) -->
+<script src="assets/tailwind-browser_47b6dac6f6ef.js"></script>
+<!-- tema do Tailwind: cores, fontes, animações entrada e crescer e foco (bloco text/tailwindcss da fonte, mantido inline) -->
+<style type="text/tailwindcss">
+@theme {
+  --color-papel: #f4f4f0;
+  --color-cartao: #ffffff;
+  --color-grafite: #17181a;
+  --color-grafite-suave: #55595f;
+  --color-fio: #dedfd8;
+  --color-sinal: #e5531a;
+  --color-sinal-texto: #b23d0c;
+  --color-ok: #1d7a46;
+  --color-ok-fundo: #e3f1e8;
+  --color-alerta-texto: #8a5a00;
+  --color-alerta-fundo: #fbf0d6;
+  --color-agua: #1f5f8b;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --animate-entrada: entrada 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-crescer: crescer 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  @keyframes entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes crescer { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+}
+@layer base {
+  :focus-visible { outline: 2px solid var(--color-sinal); outline-offset: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+<!-- estrutura de documentação do catálogo (classes ds-*) -->
+<link rel="stylesheet" href="assets/ds/css/ds-documentacao.css">
+</head>
+<body class="bg-papel text-grafite font-sans antialiased">
+<div class="min-h-screen lg:grid lg:grid-cols-[248px_1fr]">
+
+  <aside class="hidden lg:flex flex-col gap-8 border-r border-fio bg-cartao px-5 py-6" aria-label="Navegação do design system">
+    <a href="#hero" class="flex items-center gap-3 font-semibold tracking-tight text-lg">
+      <span class="grid size-9 place-items-center rounded-lg bg-grafite text-papel"><i data-lucide="droplets" class="size-5"></i></span>
+      Serra Azul
+    </a>
+    <nav>
+      <ul class="space-y-1 text-sm">
+        <li><a href="#hero" class="flex items-center gap-3 rounded-lg bg-papel px-3 py-2.5 font-medium" aria-current="page"><i data-lucide="layout-dashboard" class="size-4"></i>Hero</a></li>
+        <li><a href="#tipografia" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="gauge" class="size-4"></i>Tipografia</a></li>
+        <li><a href="#cores" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="droplets" class="size-4"></i>Cores</a></li>
+        <li><a href="#componentes" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="wrench" class="size-4"></i>Componentes</a></li>
+        <li><a href="#layout" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="map" class="size-4"></i>Layout</a></li>
+        <li><a href="#movimento" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="waves" class="size-4"></i>Movimento</a></li>
+        <li><a href="#icones" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="activity" class="size-4"></i>Ícones</a></li>
+      </ul>
+    </nav>
+    <div class="mt-auto rounded-xl border border-fio p-4 text-sm">
+      <p class="font-medium">Design system</p>
+      <p class="mt-1 text-grafite-suave">Valores medidos em 1440 px na página original</p>
+      <button type="button" class="mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite" disabled>Botão desabilitado</button>
+    </div>
+  </aside>
+
+  <div class="min-w-0">
+<!-- hero -->
+<section id="hero" data-vd-secao>
+<header class="sticky top-0 z-10 flex items-center gap-4 border-b border-fio bg-papel/90 px-5 py-4 backdrop-blur md:px-8">
+      <div class="min-w-0">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-grafite-suave">Design system</p>
+        <h1 class="truncate text-xl font-semibold tracking-tight md:text-2xl">Catálogo do painel</h1>
+      </div>
+      <div class="ml-auto hidden items-center md:flex">
+        <label for="busca" class="sr-only">Buscar estilo, cor ou componente</label>
+        <div class="relative">
+          <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite-suave"></i>
+          <input id="busca" type="search" placeholder="Buscar estilo, cor ou componente" class="w-72 rounded-lg border border-fio bg-cartao py-2 pl-9 pr-3 text-sm placeholder:text-grafite-suave focus:border-grafite focus:outline-none">
+        </div>
+      </div>
+      <button type="button" class="relative ml-auto grid size-10 place-items-center rounded-lg border border-fio bg-cartao transition hover:border-grafite md:ml-0" aria-label="Notificações: exemplo com ponto de alerta">
+        <i data-lucide="bell" class="size-4"></i>
+        <span class="absolute right-2 top-2 size-2 rounded-full bg-sinal"></span>
+      </button>
+      <a href="#componentes" class="hidden items-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto sm:inline-flex">
+        <i data-lucide="plus" class="size-4"></i>Componentes
+      </a>
+    </header>
+</section>
+
+    <main class="space-y-6 px-5 py-6 md:px-8 md:py-8">
+<!-- tipografia -->
+<section id="tipografia" data-vd-secao class="space-y-6" aria-labelledby="titulo-tipografia">
+        <div>
+          <h2 id="titulo-tipografia" class="text-lg font-semibold tracking-tight">Tipografia · duas famílias IBM Plex</h2>
+          <p class="text-sm text-grafite-suave">IBM Plex Sans para títulos, rótulos e texto; IBM Plex Mono para números, códigos e sobrescritos. Valores medidos na página original em 1440 px.</p>
+        </div>
+        <div class="rounded-xl border border-fio bg-cartao">
+          <div class="ds-linha" data-vd-estilo="Título 1"><span class="ds-nome">Título 1 · h1</span><div class="min-w-0"><h1 class="truncate text-xl font-semibold tracking-tight md:text-2xl">Título da página</h1></div><span class="ds-rotulo">24px / 32px</span></div>
+          <div class="ds-linha" data-vd-estilo="Título 2"><span class="ds-nome">Título 2 · cartão</span><div><h2 class="font-medium">Título de um cartão do painel</h2></div><span class="ds-rotulo">16px / 24px</span></div>
+          <div class="ds-linha" data-vd-estilo="Negrito G"><span class="ds-nome">Negrito G · marca</span><div><a href="#tipografia" class="flex items-center gap-3 font-semibold tracking-tight text-lg"><span class="grid size-9 place-items-center rounded-lg bg-grafite text-papel"><i data-lucide="droplets" class="size-5"></i></span>Nome da rede</a></div><span class="ds-rotulo">18px / 28px</span></div>
+          <div class="ds-linha" data-vd-estilo="Parágrafo"><span class="ds-nome">Parágrafo · aviso</span><div><p class="mt-4 rounded-lg bg-alerta-fundo px-3 py-2 text-sm text-alerta-texto">Texto corrido de 14 px, usado em avisos, legendas e descrições dos cartões.</p></div><span class="ds-rotulo">14px / 20px</span></div>
+          <div class="ds-linha" data-vd-estilo="Regular G"><span class="ds-nome">Regular G · indicador</span><div><p class="mt-3 font-mono text-3xl font-medium tracking-tight">32,4 <span class="text-base text-grafite-suave">mca</span></p></div><span class="ds-rotulo">30px / 36px</span></div>
+          <div class="ds-linha" data-vd-estilo="Regular M"><span class="ds-nome">Regular M · unidade</span><div><p class="font-mono font-medium tracking-tight"><span class="text-base text-grafite-suave">L/s · mca · %</span></p></div><span class="ds-rotulo">16px / 24px</span></div>
+          <div class="ds-linha" data-vd-estilo="Regular P"><span class="ds-nome">Regular P · sobrescrito</span><div><p class="font-mono text-xs uppercase tracking-[0.18em] text-grafite-suave">Rótulo em mono, caixa alta</p></div><span class="ds-rotulo">12px / 16px</span></div>
+        </div>
+</section>
+
+<!-- cores -->
+<section id="cores" data-vd-secao class="space-y-6" aria-labelledby="titulo-cores">
+        <div>
+          <h2 id="titulo-cores" class="text-lg font-semibold tracking-tight">Cores · papel, grafite e sinal</h2>
+          <p class="text-sm text-grafite-suave">Doze cores do tema do Tailwind. Cada estado de operação tem um par de fundo e texto.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg border border-fio bg-papel"></span><p class="text-sm"><span class="font-medium">papel</span> · <span class="font-mono text-xs">#f4f4f0</span><br><span class="text-grafite-suave">fundo da página</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg border border-fio bg-cartao"></span><p class="text-sm"><span class="font-medium">cartao</span> · <span class="font-mono text-xs">#ffffff</span><br><span class="text-grafite-suave">cartões e campos</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg bg-grafite"></span><p class="text-sm"><span class="font-medium">grafite</span> · <span class="font-mono text-xs">#17181a</span><br><span class="text-grafite-suave">texto e botão primário</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><svg class="size-10" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#55595f"/></svg><p class="text-sm"><span class="font-medium">grafite-suave</span> · <span class="font-mono text-xs">#55595f</span><br><span class="text-grafite-suave">texto secundário</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><svg class="size-10" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#dedfd8"/></svg><p class="text-sm"><span class="font-medium">fio</span> · <span class="font-mono text-xs">#dedfd8</span><br><span class="text-grafite-suave">bordas e divisores</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg bg-agua"></span><p class="text-sm"><span class="font-medium">agua</span> · <span class="font-mono text-xs">#1f5f8b</span><br><span class="text-grafite-suave">vazão e reservatórios</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg bg-sinal"></span><p class="text-sm"><span class="font-medium">sinal</span> · <span class="font-mono text-xs">#e5531a</span><br><span class="text-grafite-suave">pressão, alerta e foco</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg bg-sinal-texto"></span><p class="text-sm"><span class="font-medium">sinal-texto</span> · <span class="font-mono text-xs">#b23d0c</span><br><span class="text-grafite-suave">texto crítico e hover</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg bg-ok"></span><p class="text-sm"><span class="font-medium">ok</span> · <span class="font-mono text-xs">#1d7a46</span><br><span class="text-grafite-suave">dentro da faixa</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg border border-fio bg-ok-fundo"></span><p class="text-sm"><span class="font-medium">ok-fundo</span> · <span class="font-mono text-xs">#e3f1e8</span><br><span class="text-grafite-suave">selo de resolução</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><svg class="size-10" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#8a5a00"/></svg><p class="text-sm"><span class="font-medium">alerta-texto</span> · <span class="font-mono text-xs">#8a5a00</span><br><span class="text-grafite-suave">texto de atenção</span></p></div>
+          <div class="flex items-center gap-3 rounded-xl border border-fio bg-cartao p-4"><span class="size-10 rounded-lg border border-fio bg-alerta-fundo"></span><p class="text-sm"><span class="font-medium">alerta-fundo</span> · <span class="font-mono text-xs">#fbf0d6</span><br><span class="text-grafite-suave">aviso e selo em campo</span></p></div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-xl border border-fio bg-cartao p-5"><p class="font-medium">Cartão</p><p class="mt-1 text-sm text-grafite-suave">bg-cartao, borda border-fio e rounded-xl</p></div>
+          <div class="rounded-xl border border-fio p-4 text-sm"><p class="font-medium">Cartão sobre papel</p><p class="mt-1 text-grafite-suave">sem fundo, como o cartão de turno</p></div>
+          <div class="relative overflow-hidden rounded-xl border border-fio"><div class="bg-papel/90 backdrop-blur p-5"><p class="font-medium">Vidro do topo</p><p class="mt-1 text-sm text-grafite-suave">bg-papel/90 com backdrop-blur</p></div></div>
+          <div class="rounded-xl border border-fio bg-cartao p-5"><p class="mt-4 rounded-lg bg-alerta-fundo px-3 py-2 text-sm text-alerta-texto">Aviso: alerta-fundo com alerta-texto</p></div>
+        </div>
+</section>
+
+<!-- componentes -->
+<section id="componentes" data-vd-secao class="space-y-6" aria-labelledby="titulo-componentes">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 id="titulo-componentes" class="text-lg font-semibold tracking-tight">Componentes · botões, campos, selos e cartões</h2>
+            <p class="text-sm text-grafite-suave">Passe o mouse para ver o hover e use Tab para ver o foco em sinal. O estado desabilitado existe na página original.</p>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><i data-lucide="filter" class="size-4"></i>Filtrar</button>
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><i data-lucide="download" class="size-4"></i>Exportar</button>
+          </div>
+        </div>
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 class="font-medium">Botões</h2>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <a href="#componentes" class="inline-flex items-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto"><i data-lucide="plus" class="size-4"></i>Primário</a>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><i data-lucide="filter" class="size-4"></i>Secundário</button>
+              <button type="button" class="relative grid size-10 place-items-center rounded-lg border border-fio bg-cartao transition hover:border-grafite" aria-label="Botão de ícone com ponto de alerta"><i data-lucide="bell" class="size-4"></i><span class="absolute right-2 top-2 size-2 rounded-full bg-sinal"></span></button>
+              <a href="#componentes" class="inline-flex items-center gap-1 text-sm font-medium text-sinal-texto hover:underline">Link de ação<i data-lucide="chevron-right" class="size-4"></i></a>
+            </div>
+            <button type="button" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto active:scale-[0.98]"><i data-lucide="map" class="size-4"></i>Largura total · encolhe ao clicar</button>
+            <button type="button" class="mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite" disabled>Desabilitado</button>
+            <p class="mt-4 text-sm text-grafite-suave">Primário: hover em sinal-texto · secundário: borda passa a grafite · clique no largura total: scale 0,98</p>
+          </div>
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 class="font-medium">Campo e selos</h2>
+            <label for="ds-busca" class="sr-only">Campo de busca de exemplo</label>
+            <div class="relative mt-4">
+              <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite-suave"></i>
+              <input id="ds-busca" type="search" placeholder="Campo de busca com ícone" class="w-full rounded-lg border border-fio bg-cartao py-2 pl-9 pr-3 text-sm placeholder:text-grafite-suave focus:border-grafite focus:outline-none">
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="whitespace-nowrap rounded-full bg-sinal-texto px-2.5 py-1 text-xs font-medium text-white">Crítica</span>
+              <span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Em campo</span>
+              <span class="whitespace-nowrap rounded-full bg-ok-fundo px-2.5 py-1 text-xs font-medium text-ok">Resolvendo</span>
+            </div>
+            <p class="mt-4 flex items-center gap-2 text-sm text-grafite-suave">
+              <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-ok"></span></span>
+              Indicador ao vivo
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Indicador</span><i data-lucide="gauge" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">32,4 <span class="text-base text-grafite-suave">mca</span></p>
+            <p class="mt-2 text-sm text-ok">Legenda positiva em ok</p>
+          </article>
+          <article class="rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Indicador neutro</span><i data-lucide="activity" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">418 <span class="text-base text-grafite-suave">L/s</span></p>
+            <p class="mt-2 text-sm text-grafite-suave">Legenda em grafite-suave</p>
+          </article>
+          <article class="rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Indicador em alerta</span><i data-lucide="droplets" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">17,8<span class="text-base text-grafite-suave">%</span></p>
+            <p class="mt-2 text-sm text-sinal-texto">Legenda crítica em sinal-texto</p>
+          </article>
+          <div class="mt-auto rounded-xl border border-fio p-4 text-sm">
+            <p class="font-medium">Cartão lateral</p>
+            <p class="mt-1 text-grafite-suave">Texto secundário e ação</p>
+            <button type="button" class="mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite">Ação do cartão</button>
+          </div>
+        </div>
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <section class="min-w-0 rounded-xl border border-fio bg-cartao" aria-label="Tabela de exemplo">
+            <div class="flex items-center justify-between border-b border-fio p-5">
+              <h2 class="font-medium">Tabela com linhas em hover</h2>
+              <a href="#componentes" class="inline-flex items-center gap-1 text-sm font-medium text-sinal-texto hover:underline">Ver todas<i data-lucide="chevron-right" class="size-4"></i></a>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[560px] text-left text-sm">
+                <thead class="font-mono text-xs uppercase tracking-wider text-grafite-suave">
+                  <tr><th class="px-5 py-3 font-medium">Código</th><th class="px-5 py-3 font-medium">Descrição</th><th class="px-5 py-3 font-medium">Situação</th><th class="px-5 py-3 font-medium">Tempo</th></tr>
+                </thead>
+                <tbody class="divide-y divide-fio">
+                  <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">EX-0001</td><td class="px-5 py-3.5">Linha com selo crítico</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-sinal-texto px-2.5 py-1 text-xs font-medium text-white">Crítica</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">2 h 10 min</td></tr>
+                  <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">EX-0002</td><td class="px-5 py-3.5">Linha com selo de atenção</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Em campo</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">48 min</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <figure class="m-0 rounded-xl border border-fio bg-cartao p-5">
+            <figcaption class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium">Gráfico de linhas</span>
+              <span class="flex gap-4 font-mono text-xs text-grafite-suave"><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-agua"></span>Série 1</span><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-sinal"></span>Série 2</span></span>
+            </figcaption>
+            <svg viewBox="0 0 640 240" class="mt-4 w-full text-fio" role="img" aria-labelledby="ds-grafico">
+              <title id="ds-grafico">Duas séries de exemplo: área em agua e linha tracejada em sinal sobre grade em fio</title>
+              <g stroke="currentColor"><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/><line x1="0" y1="220" x2="640" y2="220"/></g>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172 L640 220 L0 220 Z" fill="#1f5f8b" fill-opacity="0.10"/>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172" fill="none" stroke="#1f5f8b" stroke-width="2.2"/>
+              <path d="M0 70 C60 72 90 84 130 120 S190 150 220 132 S300 92 340 98 S420 110 460 140 S540 152 580 116 S620 80 640 78" fill="none" stroke="#e5531a" stroke-width="2.2" stroke-dasharray="6 5"/>
+              <g fill="#55595f" font-family="IBM Plex Mono, monospace" font-size="11"><text x="0" y="238">00h</text><text x="306" y="238">12h</text><text x="612" y="238">24h</text></g>
+            </svg>
+          </figure>
+        </div>
+</section>
+
+<!-- layout -->
+<section id="layout" data-vd-secao class="space-y-6" aria-labelledby="titulo-layout">
+        <div>
+          <h2 id="titulo-layout" class="text-lg font-semibold tracking-tight">Layout · barra lateral e grades de cartões</h2>
+          <p class="text-sm text-grafite-suave">Barra lateral de 248 px a partir de 1024 px, conteúdo com 32 px de margem e espaço de 16 px entre cartões.</p>
+        </div>
+        <div class="rounded-xl border border-fio bg-cartao p-5">
+          <div class="lg:grid lg:grid-cols-[248px_1fr] gap-4">
+            <div class="rounded-xl border border-fio p-4 text-sm"><p class="font-medium">Barra lateral · 248px</p><p class="mt-1 text-grafite-suave">marca, menu e cartão de turno</p></div>
+            <div class="rounded-xl border border-fio p-4 text-sm"><p class="font-medium">Conteúdo · 1fr</p><p class="mt-1 text-grafite-suave">topo fixo com vidro e área principal</p></div>
+          </div>
+          <p class="mt-4 font-mono text-xs text-grafite-suave">lg:grid lg:grid-cols-[248px_1fr] · estrutura geral da página</p>
+        </div>
+        <div class="rounded-xl border border-fio bg-cartao p-5">
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div class="rounded-xl border border-fio p-4 text-sm font-mono">1/4</div>
+            <div class="rounded-xl border border-fio p-4 text-sm font-mono">2/4</div>
+            <div class="rounded-xl border border-fio p-4 text-sm font-mono">3/4</div>
+            <div class="rounded-xl border border-fio p-4 text-sm font-mono">4/4</div>
+          </div>
+          <p class="mt-4 font-mono text-xs text-grafite-suave">grid gap-4 sm:grid-cols-2 xl:grid-cols-4 · grade dos indicadores</p>
+        </div>
+        <div class="rounded-xl border border-fio bg-cartao p-5">
+          <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+            <div class="rounded-xl border border-fio p-4 text-sm"><p class="font-medium">Painel principal · 1,6fr</p><p class="mt-1 text-grafite-suave">gráfico ou tabela</p></div>
+            <div class="rounded-xl border border-fio p-4 text-sm"><p class="font-medium">Painel lateral · 1fr</p><p class="mt-1 text-grafite-suave">reservatórios ou mapa</p></div>
+          </div>
+          <p class="mt-4 font-mono text-xs text-grafite-suave">grid gap-4 xl:grid-cols-[1.6fr_1fr] · bloco dividido</p>
+        </div>
+</section>
+
+<!-- movimento -->
+<section id="movimento" data-vd-secao class="space-y-6" aria-labelledby="titulo-movimento">
+        <div>
+          <h2 id="titulo-movimento" class="text-lg font-semibold tracking-tight">Movimento · entrada, crescimento e pulso</h2>
+          <p class="text-sm text-grafite-suave">Duas animações do tema tocam uma vez ao carregar; o pulso do indicador ao vivo é contínuo. Tudo é desligado com prefers-reduced-motion. <a href="design-system.html?repetir#movimento" class="font-medium text-sinal-texto hover:underline">Recarregar nesta seção</a></p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5"><p class="font-medium">animate-entrada</p><p class="mt-2 text-sm text-grafite-suave">entrada · 700 ms cubic-bezier(0.2, 0.8, 0.2, 1)</p></article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:80ms]"><p class="font-medium">+80 ms</p><p class="mt-2 text-sm text-grafite-suave">[animation-delay:80ms]</p></article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:160ms]"><p class="font-medium">+160 ms</p><p class="mt-2 text-sm text-grafite-suave">[animation-delay:160ms]</p></article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:240ms]"><p class="font-medium">+240 ms</p><p class="mt-2 text-sm text-grafite-suave">[animation-delay:240ms]</p></article>
+        </div>
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 class="font-medium">animate-crescer · barras de nível</h2>
+            <div class="mt-5 flex h-48 items-end justify-between gap-3">
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[82%] origin-bottom bg-agua"></div></div><span class="font-mono text-xs">0 ms</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[64%] origin-bottom bg-agua [animation-delay:100ms]"></div></div><span class="font-mono text-xs">+100 ms</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[31%] origin-bottom bg-sinal [animation-delay:200ms]"></div></div><span class="font-mono text-xs text-sinal-texto">+200 ms</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[76%] origin-bottom bg-agua [animation-delay:300ms]"></div></div><span class="font-mono text-xs">+300 ms</span></div>
+            </div>
+            <p class="mt-4 text-sm text-grafite-suave">crescer · 1200 ms cubic-bezier(0.2, 0.8, 0.2, 1), scaleY de 0 a 1 a partir da base (origin-bottom)</p>
+          </div>
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 class="font-medium">Pulso e transições</h2>
+            <p class="mt-4 flex items-center gap-2 text-sm text-grafite-suave">
+              <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-ok"></span></span>
+              animate-ping · contínuo
+            </p>
+            <ul class="mt-4 space-y-1 text-sm">
+              <li><a href="#movimento" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="waves" class="size-4"></i>transition-colors · passe o mouse</a></li>
+            </ul>
+            <button type="button" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto active:scale-[0.98]">transition · clique e segure</button>
+            <p class="mt-4 text-sm text-grafite-suave">Transições padrão do Tailwind: 150 ms, cubic-bezier(0.4, 0, 0.2, 1)</p>
+          </div>
+        </div>
+</section>
+
+<!-- icones -->
+<section id="icones" data-vd-secao class="space-y-6" aria-labelledby="titulo-icones">
+        <div>
+          <h2 id="titulo-icones" class="text-lg font-semibold tracking-tight">Ícones · Lucide e SVG próprio</h2>
+          <p class="text-sm text-grafite-suave">Treze ícones Lucide, desenhados pelo runtime local. A cor vem da classe de texto e o tamanho de size-4 (16 px) ou size-5 (20 px).</p>
+        </div>
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex flex-wrap items-center gap-4">
+              <i data-lucide="layout-dashboard" class="size-4"></i>
+              <i data-lucide="waves" class="size-4"></i>
+              <i data-lucide="wrench" class="size-4"></i>
+              <i data-lucide="map" class="size-4"></i>
+              <i data-lucide="search" class="size-4"></i>
+              <i data-lucide="bell" class="size-4"></i>
+              <i data-lucide="plus" class="size-4"></i>
+              <i data-lucide="filter" class="size-4"></i>
+              <i data-lucide="download" class="size-4"></i>
+              <i data-lucide="gauge" class="size-4"></i>
+              <i data-lucide="activity" class="size-4"></i>
+              <i data-lucide="droplets" class="size-4"></i>
+              <i data-lucide="chevron-right" class="size-4"></i>
+            </div>
+            <div class="mt-5 flex flex-wrap items-center gap-4">
+              <span class="grid size-9 place-items-center rounded-lg bg-grafite text-papel"><i data-lucide="droplets" class="size-5"></i></span>
+              <i data-lucide="droplets" class="size-5"></i>
+              <span class="text-grafite-suave"><i data-lucide="gauge" class="size-4"></i></span>
+              <span class="text-sinal-texto"><i data-lucide="wrench" class="size-4"></i></span>
+              <span class="text-ok"><i data-lucide="activity" class="size-4"></i></span>
+            </div>
+            <p class="mt-4 text-sm text-grafite-suave">16 px soltos · 20 px na marca, dentro de um quadrado de 36 px em grafite · herança de cor de text-grafite-suave, text-sinal-texto e text-ok</p>
+          </div>
+          <div class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 class="font-medium">Mapa esquemático</h2>
+            <svg viewBox="0 0 320 220" class="mt-4 w-full text-grafite-suave" role="img" aria-labelledby="ds-mapa">
+              <title id="ds-mapa">Quatro zonas de exemplo; a primeira destacada em sinal</title>
+              <g fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M20 30 L150 20 L170 100 L40 120 Z" fill="#e5531a" fill-opacity="0.12" stroke="#e5531a"/>
+                <path d="M150 20 L300 40 L290 120 L170 100 Z"/>
+                <path d="M40 120 L170 100 L180 200 L30 190 Z"/>
+                <path d="M170 100 L290 120 L300 200 L180 200 Z"/>
+              </g>
+              <g fill="currentColor" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="500">
+                <text x="62" y="72" fill="#b23d0c">Zona A</text><text x="196" y="74">Zona B</text><text x="66" y="160">Zona C</text><text x="200" y="160">Zona D</text>
+              </g>
+              <circle cx="96" cy="94" r="5" fill="#e5531a"/>
+            </svg>
+            <p class="mt-4 text-sm text-grafite-suave">SVG próprio: contornos em currentColor (text-grafite-suave) e destaque em #e5531a</p>
+          </div>
+        </div>
+</section>
+      <p class="pt-2 text-xs text-grafite-suave">Design system extraído do painel Serra Azul com o framework Vibe Design.</p>
+    </main>
+  </div>
+</div>
+<!-- runtime dos ícones Lucide -->
+<script src="assets/lucide_min_688bf7aeebeb.js"></script>
+<!-- desenha os ícones (era um <script> inline na fonte) -->
+<script src="assets/ds/js/icones.js"></script>
+</body>
+</html>

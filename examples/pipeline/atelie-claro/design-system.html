@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system · Ateliê Taipa</title>
+<meta name="description" content="Design system do Ateliê Taipa: tipografia, cores, componentes, layout, movimento e ícones extraídos do código-fonte.">
+<!-- CSS da página original: fontes Fraunces e Instrument Sans, variáveis, componentes, keyframes e responsivo -->
+<link rel="stylesheet" href="assets/atelie_cdb5ff0db780.css">
+<!-- estrutura de documentação do catálogo (classes ds-*) -->
+<link rel="stylesheet" href="assets/ds/css/ds-documentacao.css">
+</head>
+<body>
+
+<header class="cabecalho coluna">
+  <a class="cabecalho__nome" href="#hero">Ateliê Taipa</a>
+  <nav aria-label="Seções do design system">
+    <ul class="cabecalho__menu">
+      <li><a href="#hero">Hero</a></li>
+      <li><a href="#tipografia">Tipografia</a></li>
+      <li><a href="#cores">Cores</a></li>
+      <li><a href="#componentes">Componentes</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#movimento">Movimento</a></li>
+      <li><a href="#icones">Ícones</a></li>
+    </ul>
+  </nav>
+  <span class="cabecalho__extra">Design system · medido em 1440 px</span>
+</header>
+
+<main id="topo">
+<!-- hero -->
+<section id="hero" data-vd-secao>
+<section class="abertura coluna" aria-labelledby="titulo-abertura">
+    <div>
+      <span class="sobrescrito">Design system · tipografia, cor, traço e movimento</span>
+      <h1 id="titulo-abertura" class="abertura__titulo">
+        <span class="linha-texto"><span>Peças que</span></span>
+        <span class="linha-texto"><span><em>respiram</em></span></span>
+        <span class="linha-texto"><span>em coro.</span></span>
+      </h1>
+      <div class="abertura__rodape">
+        <p>Este catálogo reúne as peças do site do Ateliê Taipa. Cada amostra usa as mesmas classes, fontes e arquivos da página original.</p>
+        <div class="abertura__acoes">
+          <a class="convite" href="#tipografia">Ver a tipografia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </a>
+          <a class="convite convite--vazado" href="#componentes">Componentes</a>
+        </div>
+      </div>
+    </div>
+    <figure class="prancha" style="margin:0">
+      <svg viewBox="0 0 560 520" role="img" aria-labelledby="prancha-titulo">
+        <title id="prancha-titulo">Corte esquemático de uma casa, desenhado pela animação desenhar em três tempos</title>
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path class="tracado" d="M40 440 H520"/>
+          <path class="tracado" d="M90 440 V250 L270 120 L450 250 V440"/>
+          <path class="tracado tracado--2" d="M90 330 H300 M300 330 V440 M140 440 V380 H200 V440"/>
+          <path class="tracado tracado--2" d="M320 440 L320 410 L345 410 L345 385 L370 385 L370 360 L395 360 L395 335 L420 335"/>
+          <path class="tracado tracado--2" d="M330 250 H420 V300 H330 Z M375 250 V300"/>
+          <path class="tracado tracado--3" d="M486 440 V360 M486 360 C456 360 446 330 462 312 C446 290 470 262 494 272 C512 252 546 270 538 296 C556 312 546 346 520 348 C514 362 498 364 486 360"/>
+          <path class="tracado tracado--3" d="M270 120 V96 M250 108 L290 108"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.55">
+          <path class="tracado tracado--3" d="M60 250 V440 M54 250 H66 M54 440 H66"/>
+          <path class="tracado tracado--3" d="M506 80 L330 250" stroke-dasharray="4 6"/>
+        </g>
+        <g fill="currentColor" font-family="Instrument Sans, sans-serif" font-size="12" letter-spacing="1.5">
+          <text x="24" y="350" transform="rotate(-90 24 350)">TRAÇO 1,4</text>
+          <text x="492" y="76" text-anchor="end">DESENHAR · 2600 MS</text>
+          <text x="120" y="470">TEMPO 1 · 300 MS</text>
+          <text x="330" y="470">TEMPO 2 · 700 MS</text>
+        </g>
+        <circle cx="514" cy="72" r="10" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <figcaption class="prancha__legenda"><span>Prancha · traçado animado</span><span>Três tempos</span></figcaption>
+    </figure>
+  </section>
+</section>
+
+<!-- tipografia -->
+<section id="tipografia" data-vd-secao class="bloco coluna" aria-labelledby="titulo-tipografia">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Tipografia</span>
+      <div>
+        <h2 id="titulo-tipografia" class="bloco__titulo revelar">Uma serifa que fala, uma sans que informa.</h2>
+        <p class="bloco__intro revelar">Fraunces nos títulos e números, com itálico em terracota para a palavra que importa. Instrument Sans no texto corrido, nos rótulos e nos botões. Os valores à direita foram medidos na página original em 1440 px.</p>
+      </div>
+    </div>
+    <div>
+      <div class="ds-linha" data-vd-estilo="Título 2"><span class="ds-nome">Título 2 · h2</span><div><h2 class="bloco__titulo revelar">Doze anos de obras.</h2></div><span class="ds-rotulo">72px / 72px</span></div>
+      <div class="ds-linha" data-vd-estilo="Título 3"><span class="ds-nome">Título 3 · obra</span><div><h3 class="obra__nome">Nome de uma obra</h3></div><span class="ds-rotulo">36px / 39.6px</span></div>
+      <div class="ds-linha" data-vd-estilo="Negrito G"><span class="ds-nome">Negrito G · convite</span><div><a class="convite" href="#componentes">Agendar uma visita</a></div><span class="ds-rotulo">14px / 14px</span></div>
+      <div class="ds-linha" data-vd-estilo="Parágrafo"><span class="ds-nome">Parágrafo · etapa</span><div class="etapa ds-contexto"><p>Estudos de sol, vento e drenagem definem onde a casa pousa e para onde ela se abre para a paisagem.</p></div><span class="ds-rotulo">15px / 24px</span></div>
+      <div class="ds-linha" data-vd-estilo="Regular G"><span class="ds-nome">Regular G · itálico</span><div><h3 class="obra__nome"><em>Palavra em destaque</em></h3></div><span class="ds-rotulo">36px / 39.6px</span></div>
+      <div class="ds-linha" data-vd-estilo="Regular M"><span class="ds-nome">Regular M · legenda</span><div class="numero ds-contexto"><span>menos carbono incorporado que uma casa comum do mesmo tamanho</span></div><span class="ds-rotulo">14px / 22.4px</span></div>
+      <div class="ds-linha" data-vd-estilo="Regular P"><span class="ds-nome">Regular P · sobrescrito</span><div><span class="sobrescrito">Rótulo em caixa alta · 0,2em</span></div><span class="ds-rotulo">12px / 19.2px</span></div>
+    </div>
+</section>
+
+<!-- cores -->
+<section id="cores" data-vd-secao class="bloco coluna" aria-labelledby="titulo-cores">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Cores e superfícies</span>
+      <div>
+        <h2 id="titulo-cores" class="bloco__titulo revelar">Papel cru, tinta e <em>terracota</em>.</h2>
+        <p class="bloco__intro revelar">Oito cores sólidas e um fio translúcido. O fundo é papel com grão (um filtro de ruído fixo sobre a página) e todas as divisões são fios de 1 px.</p>
+      </div>
+    </div>
+    <div class="ds-amostras">
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#f3efe6" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--papel</strong> · #f3efe6<br>fundo da página e texto sobre tinta</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#e8e1d3" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--papel-escuro</strong> · #e8e1d3<br>fundo da obra em hover</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#1c1b18" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--tinta</strong> · #1c1b18<br>texto, botão primário e fios fortes</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#57534a" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--tinta-suave</strong> · #57534a<br>texto secundário e rótulos</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#a3461f" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--terracota</strong> · #a3461f<br>itálicos, hover do botão e foco</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#c4602f" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--terracota-viva</strong> · #c4602f<br>numerais romanos das etapas</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#7f3517" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>convite:active</strong> · #7f3517<br>botão pressionado</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="#6f7d63" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--salvia</strong> · #6f7d63<br>plantas desenhadas nas obras</p></div>
+      <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" fill="rgba(28, 27, 24, 0.16)" stroke="rgba(28, 27, 24, 0.16)"/></svg><p class="ds-legenda"><strong>--fio</strong> · rgba(28, 27, 24, 0.16)<br>divisores, bordas de seção e cabeçalho</p></div>
+    </div>
+    <div class="ds-amostras ds-bloco">
+      <div class="ds-amostra"><div class="numeros"><div class="numero"><strong>16%</strong><span>fio forte: borda de 1 px em --tinta no topo e na base</span></div></div><p class="ds-legenda">.numeros · faixa entre fios de --tinta</p></div>
+      <div class="ds-amostra"><div class="metodo"><div class="etapa"><span class="etapa__marca">i.</span><h3>Divisão leve</h3><p>Colunas separadas por fios de --fio.</p></div></div><p class="ds-legenda">.metodo e .etapa · bordas em --fio</p></div>
+      <div class="ds-amostra"><ol class="indice"><li><a class="obra" href="#cores"><span class="obra__numero">01</span></a></li></ol><p class="ds-legenda">.indice · fio de --tinta no topo · passe o mouse: fundo --papel-escuro</p></div>
+    </div>
+</section>
+
+<!-- componentes -->
+<section id="componentes" data-vd-secao class="bloco coluna" aria-labelledby="titulo-componentes">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Componentes</span>
+      <div>
+        <h2 id="titulo-componentes" class="bloco__titulo revelar">Convites, obras, etapas e números.</h2>
+        <p class="bloco__intro revelar">Passe o mouse para ver os estados de hover e use Tab para ver o foco em terracota. O estado desabilitado existe na página original, no botão da agenda encerrada.</p>
+      </div>
+    </div>
+    <div class="ds-palco">
+      <a class="convite" href="#componentes">Conversar sobre um projeto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <a class="convite convite--vazado" href="#componentes">Ver obras</a>
+      <button class="convite" type="button" disabled>Agenda encerrada</button>
+    </div>
+    <p class="ds-legenda">.convite (primário) · .convite--vazado (secundário) · [disabled] com 45% de opacidade · passe o mouse: fundo terracota e o espaço até a seta cresce de 14 para 22 px · clique: #7f3517</p>
+    <div class="ds-palco ds-bloco">
+      <ol class="indice">
+        <li><a class="obra" href="#componentes">
+          <span class="obra__numero">01</span>
+          <h3 class="obra__nome">Linha de <em>obra</em></h3>
+          <span class="obra__lugar">Lugar, UF</span>
+          <span class="obra__ano">Ano · área</span>
+          <svg class="obra__planta" viewBox="0 0 92 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="88" height="60"/><path d="M38 2v60M38 30h52M64 30v32"/><circle cx="20" cy="32" r="6"/></svg>
+        </a></li>
+      </ol>
+    </div>
+    <p class="ds-legenda">.obra · grade de 5 colunas · passe o mouse: recuo de 18 px, fundo --papel-escuro e planta girando para terracota</p>
+    <div class="ds-palco ds-bloco">
+      <div class="metodo">
+        <div class="etapa"><span class="etapa__marca">i.</span><h3>Etapa</h3><p>Numeral romano em itálico, título em Fraunces e texto suave.</p></div>
+        <div class="etapa"><span class="etapa__marca">ii.</span><h3>Etapa seguinte</h3><p>Cada coluna fecha com um fio à direita.</p></div>
+      </div>
+      <div class="numeros">
+        <div class="numero"><strong>62%</strong><span>número grande em Fraunces leve com legenda curta</span></div>
+        <div class="numero"><strong>14</strong><span>o segundo número ganha fio à esquerda</span></div>
+      </div>
+    </div>
+    <p class="ds-legenda">.metodo com .etapa · .numeros com .numero</p>
+    <div class="ds-palco ds-bloco">
+      <div class="fechamento">
+        <h2 class="fechamento__frase">Uma frase final com <em>itálico</em>.</h2>
+        <div class="fechamento__dados">
+          <img src="assets/selo_abd6ec63baa5.svg" alt="Selo do Ateliê Taipa: uma casa de telhado inclinado dentro de um círculo terracota" width="96" height="96">
+          <a href="#componentes">contato@exemplo</a>
+          <span>Endereço em texto corrido</span>
+        </div>
+      </div>
+    </div>
+    <p class="ds-legenda">.fechamento · frase em Fraunces 104 px com dados ao lado: selo, link sublinhado e endereço</p>
+</section>
+
+<!-- layout -->
+<section id="layout" data-vd-secao class="bloco coluna" aria-labelledby="titulo-layout">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Layout e espaçamento</span>
+      <div>
+        <h2 id="titulo-layout" class="bloco__titulo revelar">Margem fluida e grades com fio.</h2>
+        <p class="bloco__intro revelar">A margem lateral vai de 20 a 56 px (.coluna). Cada seção tem 110 px de respiro vertical e um fio no topo. Abaixo de 960 px, as grades viram uma coluna.</p>
+      </div>
+    </div>
+    <div class="ds-palco">
+      <div class="abertura ds-contexto"><div class="etapa"><h3>Texto · 1,15fr</h3><p>Sobrescrito, título e rodapé com ações.</p></div><div class="etapa"><h3>Prancha · 0,85fr</h3><p>Desenho alinhado à base.</p></div></div>
+    </div>
+    <p class="ds-legenda">.abertura · layout do hero, 2 colunas (1,15fr 0,85fr), espaço 56 px, alinhadas pela base</p>
+    <div class="ds-palco ds-bloco">
+      <div class="bloco__cabeca ds-contexto"><span class="sobrescrito">Rótulo · 1fr</span><div class="etapa"><h3>Título e introdução · 2fr</h3><p>Espaço de 40 px entre as colunas.</p></div></div>
+    </div>
+    <p class="ds-legenda">.bloco__cabeca · bloco dividido, 2 colunas (1fr 2fr), espaço 40 px</p>
+    <div class="ds-palco ds-bloco">
+      <div class="metodo"><div class="etapa"><h3>1/4</h3></div><div class="etapa"><h3>2/4</h3></div><div class="etapa"><h3>3/4</h3></div><div class="etapa"><h3>4/4</h3></div></div>
+    </div>
+    <p class="ds-legenda">.metodo · grade de 4 colunas iguais com fios verticais (2 colunas abaixo de 960 px, 1 abaixo de 560 px)</p>
+</section>
+
+<!-- movimento -->
+<section id="movimento" data-vd-secao class="bloco coluna" aria-labelledby="titulo-movimento">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Movimento</span>
+      <div>
+        <h2 id="titulo-movimento" class="bloco__titulo revelar">Devagar, como quem desenha.</h2>
+        <p class="bloco__intro revelar">Três animações tocam uma vez ao carregar a página e as transições duram de 280 a 1000 ms. Tudo é desligado com prefers-reduced-motion. <a href="design-system.html?repetir#movimento">Recarregar nesta seção</a> repete as animações.</p>
+      </div>
+    </div>
+    <div class="ds-amostras">
+      <div class="ds-amostra"><p class="bloco__titulo"><span class="linha-texto"><span>Subir</span></span></p><p class="ds-legenda">subir · 1100 ms cubic-bezier(0.2, 0.75, 0.15, 1) · .linha-texto, atrasos de 140 e 280 ms</p></div>
+      <div class="ds-amostra"><div class="abertura__acoes"><a class="convite convite--vazado" href="#movimento">Surgir</a></div><p class="ds-legenda">surgir · 900 ms ease com atraso de 700 e 850 ms · .abertura__rodape p e .abertura__acoes</p></div>
+      <div class="ds-amostra"><figure class="prancha" style="margin:0"><svg viewBox="0 0 560 520" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path class="tracado" d="M40 440 H520"/><path class="tracado" d="M90 440 V250 L270 120 L450 250 V440"/><path class="tracado tracado--2" d="M90 330 H300 M300 330 V440 M140 440 V380 H200 V440"/><path class="tracado tracado--3" d="M270 120 V96 M250 108 L290 108"/></g></svg></figure><p class="ds-legenda">desenhar · 2600 ms cubic-bezier(0.4, 0.1, 0.2, 1) · .tracado, .tracado--2 (+700 ms), .tracado--3 (+1100 ms)</p></div>
+      <div class="ds-amostra"><div class="etapa revelar"><h3>Revelar</h3><p>Opacidade e 28 px de subida em 1000 ms ao entrar na tela.</p></div><p class="ds-legenda">.revelar → .visto no scroll · opacity 1000 ms ease, transform 1000 ms cubic-bezier(0.2, 0.75, 0.15, 1)</p></div>
+    </div>
+    <div class="ds-palco ds-bloco">
+      <ul class="cabecalho__menu"><li><a href="#movimento">Sublinhado do menu</a></li></ul>
+      <a class="convite" href="#movimento">Seta que se afasta
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <p class="ds-legenda">Passe o mouse: sublinhado cresce com background-size 320 ms ease · .convite troca fundo, cor e gap em 280 ms ease · .obra muda padding e fundo em 360 ms cubic-bezier(0.2, 0.8, 0.2, 1) · .obra__planta gira em 360 ms</p>
+</section>
+
+<!-- icones -->
+<section id="icones" data-vd-secao class="bloco coluna" aria-labelledby="titulo-icones">
+    <div class="bloco__cabeca">
+      <span class="sobrescrito">Ícones e desenhos</span>
+      <div>
+        <h2 id="titulo-icones" class="bloco__titulo revelar">Traço à mão, cor herdada.</h2>
+        <p class="bloco__intro revelar">Seis SVGs próprios, todos com stroke em currentColor: a seta dos convites, as quatro plantas das obras e a prancha do hero. O selo é uma imagem da página original.</p>
+      </div>
+    </div>
+    <div class="ds-palco">
+      <a class="convite" href="#icones">Herda o papel
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <a class="convite convite--vazado" href="#icones">Herda a tinta
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <svg class="obra__planta" viewBox="0 0 92 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="88" height="60"/><path d="M38 2v60M38 30h52M64 30v32"/><circle cx="20" cy="32" r="6"/></svg>
+      <svg class="obra__planta" viewBox="0 0 92 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 62V20L46 2l44 18v42z"/><path d="M2 40h88M46 40v22M24 40V20"/></svg>
+      <svg class="obra__planta" viewBox="0 0 92 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="88" height="60"/><rect x="12" y="12" width="18" height="18"/><rect x="62" y="12" width="18" height="18"/><rect x="37" y="34" width="18" height="18"/></svg>
+      <svg class="obra__planta" viewBox="0 0 92 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="14" width="88" height="36"/><path d="M2 50h88v12H2zM30 14v36M60 14v36"/></svg>
+      <img src="assets/selo_abd6ec63baa5.svg" alt="Selo do Ateliê Taipa em terracota" width="64" height="64">
+    </div>
+    <p class="ds-legenda">Seta de 18 px dentro de .convite (cor do texto, troca no hover) · plantas de 92 × 64 px em .obra__planta (--salvia, terracota no hover da obra) · selo em arquivo SVG da fonte</p>
+</section>
+</main>
+
+<footer class="final coluna">
+  <span>Design system extraído do Ateliê Taipa com o framework Vibe Design.</span>
+  <span>Valores medidos em 1440 px.</span>
+</footer>
+
+<!-- revelação no scroll (era um <script> inline na fonte) -->
+<script src="assets/ds/js/revelacao.js"></script>
+</body>
+</html>

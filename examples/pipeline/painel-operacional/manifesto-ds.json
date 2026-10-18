@@ -9,14 +9,16 @@
       "nome": "Tailwind CSS",
       "evidencias": [
         "assets/tailwind-browser_47b6dac6f6ef.js",
-        "html:type=[\\\"']text/tailwindcss"
+        "html:type=[\\\"']text/tailwindcss",
+        "http://127.0.0.1:55699/assets/js/tailwind-browser.js"
       ]
     },
     {
       "nome": "Lucide",
       "evidencias": [
         "assets/lucide_min_688bf7aeebeb.js",
-        "html:data-lucide="
+        "html:data-lucide=",
+        "http://127.0.0.1:55699/assets/js/lucide.min.js"
       ]
     }
   ],

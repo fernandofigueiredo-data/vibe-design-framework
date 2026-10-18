@@ -1,0 +1,6 @@
+/* Estrutura de documentação do catálogo. Só usa cores e fontes da fonte. */
+.ds-linha { display: grid; grid-template-columns: 180px 1fr 140px; gap: 24px; align-items: center; padding: 20px; border-bottom: 1px solid #dedfd8; }
+.ds-linha:last-child { border-bottom: 0; }
+.ds-nome { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #55595f; }
+.ds-rotulo { justify-self: end; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: #55595f; }
+@media (max-width: 720px) { .ds-linha { grid-template-columns: 1fr; gap: 8px; } .ds-rotulo { justify-self: start; } }
