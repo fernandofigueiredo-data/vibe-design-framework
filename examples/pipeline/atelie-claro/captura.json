@@ -1,0 +1,69 @@
+{
+  "versao": "1.0",
+  "url": "http://127.0.0.1:55482/index.html",
+  "url_documento": "http://127.0.0.1:55482/index.html",
+  "base": "http://127.0.0.1:55482/index.html",
+  "data": "2026-10-18T12:00:45+00:00",
+  "viewport": {
+    "largura": 1440,
+    "altura": 900
+  },
+  "modo": "fidelidade",
+  "charset": "utf-8",
+  "srcdoc": false,
+  "recursos": [
+    {
+      "url": "http://127.0.0.1:55482/assets/css/atelie.css",
+      "aliases": [],
+      "arquivo": "assets/atelie_cdb5ff0db780.css",
+      "tipo": "text/css; charset=utf-8",
+      "bytes": 10069,
+      "sha256": "67a56ba66fd9526d76887daf12ff31b117686622d1f3356e211ff3d08bf597df",
+      "origem": "rede",
+      "reescrito": true
+    },
+    {
+      "url": "http://127.0.0.1:55482/assets/fontes/fraunces-latin-wght-italic.woff2",
+      "aliases": [],
+      "arquivo": "assets/fraunces-latin-wght-italic_a38270e815c9.woff2",
+      "tipo": "font/woff2",
+      "bytes": 45656,
+      "sha256": "bceec2ef4d549efbc8df0194a8d5280b6a64c3e399244dffccd9ea1bd9ad6db7",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55482/assets/fontes/fraunces-latin-wght-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/fraunces-latin-wght-normal_f83d6fd6acd7.woff2",
+      "tipo": "font/woff2",
+      "bytes": 36620,
+      "sha256": "7f9d191d999336d3b9790afa72e1358e50a13b06d4f289341e92a311967a80f9",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55482/assets/fontes/instrument-sans-latin-wght-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/instrument-sans-latin-wght-normal_0f5e84d0eea3.woff2",
+      "tipo": "font/woff2",
+      "bytes": 30092,
+      "sha256": "2ee17598a98d8a59e4df8152d015bec9ab8e4d5672cc0ab42bef806b568e3971",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55482/assets/img/selo.svg",
+      "aliases": [],
+      "arquivo": "assets/selo_abd6ec63baa5.svg",
+      "tipo": "image/svg+xml",
+      "bytes": 568,
+      "sha256": "69685a1d95fcb9ee2cefb4d91ebd9ce8154f692986839719d7d85593b0214004",
+      "origem": "rede",
+      "reescrito": false
+    }
+  ],
+  "omitidos": [],
+  "neutralizados": [],
+  "alteracoes": []
+}

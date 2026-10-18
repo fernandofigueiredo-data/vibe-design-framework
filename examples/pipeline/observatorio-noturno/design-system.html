@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system · Observatório</title>
+<meta name="description" content="Design system do Observatório: tipografia, cores, componentes, layout e movimento extraídos do código-fonte.">
+<!-- fonte de títulos pré-carregada, como na página original -->
+<link rel="preload" href="assets/instrument-serif-latin-400-normal_eb2fa9c2b36a.woff2" as="font" type="font/woff2" crossorigin>
+<!-- CSS da página original: variáveis, fontes, componentes e responsivo -->
+<link rel="stylesheet" href="assets/observatorio_dd78fa76af3d.css">
+<!-- keyframes girar, pulsar e cintilar (eram um bloco <style> inline na fonte) -->
+<link rel="stylesheet" href="assets/ds/css/animacoes.css">
+<!-- estrutura de documentação do catálogo (classes ds-*) -->
+<link rel="stylesheet" href="assets/ds/css/ds-documentacao.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="moldura topo__barra">
+    <a class="marca" href="#hero" aria-label="Design system do Observatório, voltar ao início">
+      <img src="assets/ds/svg/marca-observatorio.svg" alt="" width="30" height="30">
+      Observatório
+    </a>
+    <nav aria-label="Seções do design system">
+      <ul class="menu">
+        <li><a href="#hero">Hero</a></li>
+        <li><a href="#tipografia">Tipografia</a></li>
+        <li><a href="#cores">Cores</a></li>
+        <li><a href="#componentes">Componentes</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#movimento">Movimento</a></li>
+        <li><a href="#icones">Ícones</a></li>
+      </ul>
+    </nav>
+    <a class="botao botao--contorno" href="#componentes">Componentes</a>
+  </div>
+</header>
+
+<main>
+<!-- hero -->
+<section id="hero" data-vd-secao>
+  <section class="hero" aria-labelledby="titulo-hero">
+    <svg class="hero__ceu" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle class="estrela--viva" style="animation-delay:3.6s" cx="1341" cy="657" r="1.6" fill="#e7ecef" fill-opacity="0.3"/><circle cx="412" cy="741" r="0.8" fill="#e7ecef" fill-opacity="0.25"/><circle cx="666" cy="630" r="0.6" fill="#e7ecef" fill-opacity="0.27"/><circle cx="556" cy="215" r="0.8" fill="#e7ecef" fill-opacity="0.4"/><circle cx="479" cy="742" r="1.0" fill="#e7ecef" fill-opacity="0.55"/><circle cx="874" cy="335" r="0.6" fill="#e7ecef" fill-opacity="0.74"/><circle cx="1183" cy="206" r="0.8" fill="#e7ecef" fill-opacity="0.34"/><circle cx="601" cy="429" r="1.2" fill="#e7ecef" fill-opacity="0.42"/><circle cx="514" cy="683" r="0.8" fill="#e7ecef" fill-opacity="0.35"/><circle class="estrela--viva" style="animation-delay:3.9s" cx="495" cy="77" r="1.2" fill="#e7ecef" fill-opacity="0.27"/><circle cx="1063" cy="417" r="0.8" fill="#e7ecef" fill-opacity="0.5"/><circle cx="718" cy="587" r="1.6" fill="#e7ecef" fill-opacity="0.38"/><circle cx="483" cy="725" r="1.6" fill="#e7ecef" fill-opacity="0.85"/><circle cx="1047" cy="191" r="0.6" fill="#e7ecef" fill-opacity="0.31"/><circle cx="978" cy="246" r="1.0" fill="#e7ecef" fill-opacity="0.49"/><circle cx="73" cy="563" r="1.0" fill="#e7ecef" fill-opacity="0.63"/><circle cx="243" cy="519" r="0.6" fill="#e7ecef" fill-opacity="0.45"/><circle cx="575" cy="188" r="0.8" fill="#e7ecef" fill-opacity="0.69"/><circle class="estrela--viva" style="animation-delay:2.9s" cx="1321" cy="38" r="1.0" fill="#e7ecef" fill-opacity="0.33"/><circle cx="1426" cy="586" r="1.6" fill="#e7ecef" fill-opacity="0.48"/><circle cx="1344" cy="306" r="1.2" fill="#e7ecef" fill-opacity="0.41"/><circle cx="1110" cy="85" r="0.8" fill="#e7ecef" fill-opacity="0.77"/><circle cx="807" cy="35" r="1.0" fill="#e7ecef" fill-opacity="0.6"/><circle cx="65" cy="305" r="0.8" fill="#e7ecef" fill-opacity="0.64"/><circle cx="300" cy="364" r="0.6" fill="#e7ecef" fill-opacity="0.47"/><circle cx="1403" cy="583" r="0.8" fill="#e7ecef" fill-opacity="0.72"/><circle cx="136" cy="176" r="1.0" fill="#e7ecef" fill-opacity="0.49"/><circle class="estrela--viva" style="animation-delay:4.2s" cx="110" cy="773" r="0.6" fill="#e7ecef" fill-opacity="0.32"/><circle cx="11" cy="300" r="0.8" fill="#e7ecef" fill-opacity="0.38"/><circle cx="1312" cy="582" r="0.8" fill="#e7ecef" fill-opacity="0.82"/><circle cx="194" cy="576" r="0.6" fill="#e7ecef" fill-opacity="0.29"/><circle cx="1342" cy="227" r="1.2" fill="#e7ecef" fill-opacity="0.7"/><circle cx="57" cy="307" r="1.0" fill="#e7ecef" fill-opacity="0.25"/><circle cx="725" cy="362" r="1.2" fill="#e7ecef" fill-opacity="0.51"/><circle cx="227" cy="663" r="1.6" fill="#e7ecef" fill-opacity="0.45"/><circle cx="45" cy="512" r="1.6" fill="#e7ecef" fill-opacity="0.67"/><circle class="estrela--viva" style="animation-delay:0.1s" cx="872" cy="65" r="1.6" fill="#e7ecef" fill-opacity="0.56"/><circle cx="1280" cy="91" r="0.6" fill="#e7ecef" fill-opacity="0.41"/><circle cx="647" cy="711" r="0.8" fill="#e7ecef" fill-opacity="0.31"/><circle cx="1326" cy="386" r="0.6" fill="#e7ecef" fill-opacity="0.77"/><circle cx="376" cy="217" r="1.0" fill="#e7ecef" fill-opacity="0.55"/><circle cx="1349" cy="282" r="1.0" fill="#e7ecef" fill-opacity="0.47"/><circle cx="265" cy="125" r="0.8" fill="#e7ecef" fill-opacity="0.75"/><circle cx="82" cy="142" r="1.0" fill="#e7ecef" fill-opacity="0.53"/><circle cx="1140" cy="624" r="0.6" fill="#e7ecef" fill-opacity="0.82"/><circle class="estrela--viva" style="animation-delay:0.7s" cx="1178" cy="721" r="0.8" fill="#e7ecef" fill-opacity="0.59"/><circle cx="957" cy="479" r="0.8" fill="#e7ecef" fill-opacity="0.32"/><circle cx="1365" cy="301" r="0.6" fill="#e7ecef" fill-opacity="0.28"/><circle cx="1428" cy="57" r="0.6" fill="#e7ecef" fill-opacity="0.57"/><circle cx="700" cy="145" r="0.8" fill="#e7ecef" fill-opacity="0.26"/><circle cx="13" cy="514" r="1.0" fill="#e7ecef" fill-opacity="0.33"/><circle cx="245" cy="721" r="1.0" fill="#e7ecef" fill-opacity="0.69"/><circle cx="591" cy="415" r="1.6" fill="#e7ecef" fill-opacity="0.7"/><circle cx="1344" cy="513" r="0.8" fill="#e7ecef" fill-opacity="0.81"/><circle class="estrela--viva" style="animation-delay:4.8s" cx="219" cy="539" r="1.2" fill="#e7ecef" fill-opacity="0.81"/><circle cx="52" cy="746" r="0.8" fill="#e7ecef" fill-opacity="0.77"/><circle cx="473" cy="402" r="0.8" fill="#e7ecef" fill-opacity="0.31"/><circle cx="1437" cy="126" r="1.2" fill="#e7ecef" fill-opacity="0.56"/><circle cx="590" cy="352" r="0.6" fill="#e7ecef" fill-opacity="0.65"/><circle cx="1151" cy="22" r="1.0" fill="#e7ecef" fill-opacity="0.29"/><circle cx="793" cy="351" r="1.2" fill="#e7ecef" fill-opacity="0.47"/><circle cx="459" cy="647" r="0.8" fill="#e7ecef" fill-opacity="0.83"/><circle cx="769" cy="292" r="1.2" fill="#e7ecef" fill-opacity="0.34"/><circle class="estrela--viva" style="animation-delay:1.1s" cx="1011" cy="787" r="0.6" fill="#e7ecef" fill-opacity="0.62"/><circle cx="802" cy="263" r="0.8" fill="#e7ecef" fill-opacity="0.73"/><circle cx="19" cy="499" r="1.6" fill="#e7ecef" fill-opacity="0.44"/><circle cx="919" cy="379" r="0.8" fill="#e7ecef" fill-opacity="0.5"/><circle cx="1116" cy="750" r="1.6" fill="#e7ecef" fill-opacity="0.62"/><circle cx="24" cy="537" r="1.2" fill="#e7ecef" fill-opacity="0.59"/><circle cx="915" cy="50" r="1.0" fill="#e7ecef" fill-opacity="0.43"/><circle cx="448" cy="372" r="1.2" fill="#e7ecef" fill-opacity="0.29"/><circle cx="1028" cy="319" r="1.0" fill="#e7ecef" fill-opacity="0.42"/><circle class="estrela--viva" style="animation-delay:0.9s" cx="831" cy="321" r="1.2" fill="#e7ecef" fill-opacity="0.43"/><circle cx="370" cy="132" r="1.6" fill="#e7ecef" fill-opacity="0.38"/><circle cx="794" cy="409" r="1.0" fill="#e7ecef" fill-opacity="0.62"/><circle cx="1288" cy="534" r="1.6" fill="#e7ecef" fill-opacity="0.26"/><circle cx="322" cy="444" r="0.8" fill="#e7ecef" fill-opacity="0.6"/><circle cx="860" cy="451" r="0.8" fill="#e7ecef" fill-opacity="0.8"/><circle cx="181" cy="199" r="1.6" fill="#e7ecef" fill-opacity="0.42"/><circle cx="443" cy="78" r="1.2" fill="#e7ecef" fill-opacity="0.76"/><circle cx="1290" cy="624" r="0.8" fill="#e7ecef" fill-opacity="0.67"/><circle class="estrela--viva" style="animation-delay:4.7s" cx="1224" cy="102" r="0.8" fill="#e7ecef" fill-opacity="0.62"/><circle cx="1164" cy="128" r="0.8" fill="#e7ecef" fill-opacity="0.8"/><circle cx="1069" cy="741" r="1.6" fill="#e7ecef" fill-opacity="0.8"/><circle cx="1399" cy="741" r="0.8" fill="#e7ecef" fill-opacity="0.53"/><circle cx="1168" cy="767" r="1.0" fill="#e7ecef" fill-opacity="0.65"/><circle cx="117" cy="747" r="1.0" fill="#e7ecef" fill-opacity="0.32"/><circle cx="1143" cy="99" r="1.0" fill="#e7ecef" fill-opacity="0.43"/><circle cx="1379" cy="477" r="0.8" fill="#e7ecef" fill-opacity="0.74"/><circle cx="1088" cy="581" r="1.2" fill="#e7ecef" fill-opacity="0.58"/><circle class="estrela--viva" style="animation-delay:0.7s" cx="148" cy="516" r="1.6" fill="#e7ecef" fill-opacity="0.7"/><circle cx="665" cy="522" r="1.2" fill="#e7ecef" fill-opacity="0.81"/><circle cx="1372" cy="481" r="0.6" fill="#e7ecef" fill-opacity="0.7"/><circle cx="359" cy="49" r="0.6" fill="#e7ecef" fill-opacity="0.36"/><circle cx="402" cy="503" r="1.0" fill="#e7ecef" fill-opacity="0.76"/><circle cx="1375" cy="513" r="0.8" fill="#e7ecef" fill-opacity="0.68"/><circle cx="690" cy="607" r="1.0" fill="#e7ecef" fill-opacity="0.62"/><circle cx="134" cy="230" r="0.8" fill="#e7ecef" fill-opacity="0.47"/><circle cx="1340" cy="33" r="0.8" fill="#e7ecef" fill-opacity="0.8"/><circle class="estrela--viva" style="animation-delay:2.7s" cx="513" cy="2" r="1.2" fill="#e7ecef" fill-opacity="0.28"/><circle cx="1003" cy="205" r="1.0" fill="#e7ecef" fill-opacity="0.39"/><circle cx="1048" cy="286" r="1.6" fill="#e7ecef" fill-opacity="0.55"/><circle cx="1090" cy="382" r="0.8" fill="#e7ecef" fill-opacity="0.47"/><circle cx="50" cy="619" r="0.6" fill="#e7ecef" fill-opacity="0.77"/><circle cx="282" cy="386" r="1.2" fill="#e7ecef" fill-opacity="0.41"/><circle cx="237" cy="200" r="0.8" fill="#e7ecef" fill-opacity="0.81"/><circle cx="682" cy="787" r="0.8" fill="#e7ecef" fill-opacity="0.53"/><circle cx="1156" cy="150" r="0.8" fill="#e7ecef" fill-opacity="0.62"/><circle class="estrela--viva" style="animation-delay:1.2s" cx="1168" cy="691" r="1.6" fill="#e7ecef" fill-opacity="0.58"/><circle cx="457" cy="425" r="1.0" fill="#e7ecef" fill-opacity="0.56"/><circle cx="1115" cy="244" r="0.8" fill="#e7ecef" fill-opacity="0.82"/><circle cx="682" cy="792" r="1.2" fill="#e7ecef" fill-opacity="0.83"/><circle cx="1184" cy="432" r="0.8" fill="#e7ecef" fill-opacity="0.74"/><circle cx="266" cy="572" r="1.2" fill="#e7ecef" fill-opacity="0.57"/><circle cx="1013" cy="141" r="1.0" fill="#e7ecef" fill-opacity="0.33"/><circle cx="267" cy="658" r="1.0" fill="#e7ecef" fill-opacity="0.41"/><circle cx="546" cy="259" r="0.8" fill="#e7ecef" fill-opacity="0.37"/><circle class="estrela--viva" style="animation-delay:1.9s" cx="893" cy="781" r="0.8" fill="#e7ecef" fill-opacity="0.66"/><circle cx="753" cy="604" r="0.6" fill="#e7ecef" fill-opacity="0.42"/><circle cx="830" cy="111" r="1.2" fill="#e7ecef" fill-opacity="0.69"/><circle cx="667" cy="427" r="0.6" fill="#e7ecef" fill-opacity="0.35"/><circle cx="1290" cy="36" r="0.8" fill="#e7ecef" fill-opacity="0.81"/><circle cx="369" cy="800" r="0.6" fill="#e7ecef" fill-opacity="0.77"/><circle cx="831" cy="326" r="1.0" fill="#e7ecef" fill-opacity="0.43"/><circle cx="1117" cy="64" r="0.8" fill="#e7ecef" fill-opacity="0.6"/><circle cx="49" cy="135" r="1.2" fill="#e7ecef" fill-opacity="0.51"/><circle class="estrela--viva" style="animation-delay:4.7s" cx="244" cy="719" r="0.8" fill="#e7ecef" fill-opacity="0.39"/><circle cx="1428" cy="24" r="0.6" fill="#e7ecef" fill-opacity="0.83"/><circle cx="1195" cy="691" r="0.6" fill="#e7ecef" fill-opacity="0.63"/><circle cx="767" cy="191" r="1.6" fill="#e7ecef" fill-opacity="0.82"/><circle cx="962" cy="250" r="0.8" fill="#e7ecef" fill-opacity="0.68"/><circle cx="655" cy="167" r="0.8" fill="#e7ecef" fill-opacity="0.52"/><circle cx="761" cy="46" r="1.6" fill="#e7ecef" fill-opacity="0.72"/><circle cx="1297" cy="680" r="0.8" fill="#e7ecef" fill-opacity="0.48"/><circle cx="805" cy="817" r="1.6" fill="#e7ecef" fill-opacity="0.26"/><circle class="estrela--viva" style="animation-delay:0.1s" cx="1251" cy="745" r="0.8" fill="#e7ecef" fill-opacity="0.61"/><circle cx="444" cy="426" r="0.6" fill="#e7ecef" fill-opacity="0.49"/><circle cx="543" cy="581" r="0.8" fill="#e7ecef" fill-opacity="0.56"/><circle cx="1168" cy="309" r="1.6" fill="#e7ecef" fill-opacity="0.61"/><circle cx="402" cy="791" r="0.6" fill="#e7ecef" fill-opacity="0.57"/><circle cx="417" cy="51" r="1.2" fill="#e7ecef" fill-opacity="0.8"/><circle cx="1006" cy="684" r="1.0" fill="#e7ecef" fill-opacity="0.79"/><circle cx="214" cy="381" r="0.6" fill="#e7ecef" fill-opacity="0.69"/><circle cx="989" cy="333" r="0.8" fill="#e7ecef" fill-opacity="0.44"/><circle class="estrela--viva" style="animation-delay:2.4s" cx="471" cy="609" r="0.6" fill="#e7ecef" fill-opacity="0.43"/><circle cx="1325" cy="818" r="1.0" fill="#e7ecef" fill-opacity="0.81"/><circle cx="468" cy="279" r="0.6" fill="#e7ecef" fill-opacity="0.33"/><circle cx="1398" cy="741" r="0.6" fill="#e7ecef" fill-opacity="0.33"/><circle cx="1319" cy="649" r="1.6" fill="#e7ecef" fill-opacity="0.42"/><circle cx="61" cy="376" r="1.2" fill="#e7ecef" fill-opacity="0.34"/></svg>
+    <div class="moldura hero__grade">
+      <div>
+        <span class="rotulo aparecer">Design system · Observatório</span>
+        <h1 id="titulo-hero" class="aparecer atraso-1">Cada peça desta interface, lida como um <em>céu mapeado</em>.</h1>
+        <p class="hero__texto aparecer atraso-2">Este catálogo reúne a tipografia, as cores, os componentes, o layout e o movimento do Observatório. Tudo aqui usa as mesmas classes e os mesmos arquivos do site original.</p>
+        <div class="hero__acoes aparecer atraso-3">
+          <a class="botao" href="#tipografia">Ver a tipografia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="botao botao--contorno" href="#componentes">Ver os componentes</a>
+        </div>
+        <dl class="leituras aparecer atraso-3">
+          <div class="leitura"><dt class="leitura__nome">Estilos de texto</dt><dd class="leitura__valor" style="margin:0" data-contar="8">8</dd></div>
+          <div class="leitura"><dt class="leitura__nome">Cores da paleta</dt><dd class="leitura__valor" style="margin:0">22</dd></div>
+          <div class="leitura"><dt class="leitura__nome">Animações</dt><dd class="leitura__valor" style="margin:0">3</dd></div>
+        </dl>
+      </div>
+      <div class="orbita aparecer atraso-2" aria-hidden="true">
+        <svg viewBox="0 0 520 520">
+          <defs>
+            <radialGradient id="nucleo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f2b544" stop-opacity="0.95"/><stop offset="0.55" stop-color="#f2b544" stop-opacity="0.18"/><stop offset="1" stop-color="#f2b544" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="260" cy="260" r="120" fill="url(#nucleo)"/>
+          <circle cx="260" cy="260" r="34" fill="#f2b544"/>
+          <g class="orbita__anel">
+            <circle cx="260" cy="260" r="150" fill="none" stroke="rgba(214,226,235,0.24)" stroke-dasharray="2 7"/>
+            <circle cx="410" cy="260" r="7" fill="#5fd3bc"/>
+          </g>
+          <g class="orbita__anel orbita__anel--lento">
+            <circle cx="260" cy="260" r="210" fill="none" stroke="rgba(214,226,235,0.12)"/>
+            <circle cx="260" cy="50" r="5" fill="#e7ecef"/>
+            <circle cx="111" cy="409" r="4" fill="#f2b544"/>
+          </g>
+          <circle cx="260" cy="260" r="248" fill="none" stroke="rgba(214,226,235,0.12)" stroke-dasharray="1 5"/>
+          <circle class="orbita__sinal" cx="372" cy="150" r="9" fill="none" stroke="#5fd3bc" stroke-width="1.5"/>
+          <circle cx="372" cy="150" r="3" fill="#5fd3bc"/>
+        </svg>
+        <p class="orbita__legenda"><strong>Componente · órbita</strong>girar 60 s e 140 s, pulsar 3,2 s</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- tipografia -->
+<section id="tipografia" data-vd-secao class="secao" aria-labelledby="titulo-tipografia">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Tipografia</span>
+          <h2 id="titulo-tipografia" class="aparecer">Duas vozes: serifa para falar, mono para medir.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Instrument Serif nos títulos e JetBrains Mono no resto. Os valores à direita foram medidos na página original em 1440 px.</p>
+      </div>
+      <div>
+        <div class="ds-linha" data-vd-estilo="Título 1"><span class="ds-nome">Título 1 · h1</span><div class="hero ds-contexto"><h1 class="aparecer atraso-1 revelado">Um <em>céu mapeado</em>.</h1></div><span class="ds-rotulo">92px / 90.2px</span></div>
+        <div class="ds-linha" data-vd-estilo="Título 2"><span class="ds-nome">Título 2 · h2</span><div class="secao ds-contexto"><h2 class="aparecer revelado">Três lentes para o mesmo céu.</h2></div><span class="ds-rotulo">58px / 60.3px</span></div>
+        <div class="ds-linha" data-vd-estilo="Título 3"><span class="ds-nome">Título 3 · h3</span><div class="cartao ds-contexto"><h3>Previsão de órbita</h3></div><span class="ds-rotulo">28px / 30.8px</span></div>
+        <div class="ds-linha" data-vd-estilo="Negrito G"><span class="ds-nome">Negrito G · botão</span><div><button class="botao" type="button">Agendar demonstração</button></div><span class="ds-rotulo">13px / 13px</span></div>
+        <div class="ds-linha" data-vd-estilo="Parágrafo"><span class="ds-nome">Parágrafo · p</span><div class="cartao ds-contexto"><p>Cada alerta chega com as variáveis que mais pesaram: vento, horário de pico ou falha do próprio sensor.</p></div><span class="ds-rotulo">14px / 23.1px</span></div>
+        <div class="ds-linha" data-vd-estilo="Regular G"><span class="ds-nome">Regular G · introdução</span><div><p class="secao__intro aparecer atraso-1 revelado">Cada lente responde a uma pergunta da operação.</p></div><span class="ds-rotulo">15px / 24.8px</span></div>
+        <div class="ds-linha" data-vd-estilo="Regular M"><span class="ds-nome">Regular M · menu</span><div class="menu ds-contexto"><a href="#tipografia">Instrumentos</a></div><span class="ds-rotulo">13px / 21.4px</span></div>
+        <div class="ds-linha" data-vd-estilo="Regular P"><span class="ds-nome">Regular P · rodapé</span><div class="rodape ds-contexto"><span>© 2026 Observatório. Dados de exemplo.</span></div><span class="ds-rotulo">12px / 19.8px</span></div>
+      </div>
+    </div>
+</section>
+
+<!-- cores -->
+<section id="cores" data-vd-secao class="secao" aria-labelledby="titulo-cores">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Cores e superfícies</span>
+          <h2 id="titulo-cores" class="aparecer">Tinta noturna, âmbar e fósforo.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Dez cores sólidas e seis transparências. As superfícies abaixo são os próprios elementos da página, com as mesmas classes.</p>
+      </div>
+      <div class="ds-amostras">
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#070b10" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--tinta</strong> · #070b10<br>fundo da página</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#0c131b" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--noite</strong> · #0c131b<br>fundo de seção e campo</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#101a24" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--painel</strong> · #101a24<br>início do gradiente do cartão</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#e7ecef" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--texto</strong> · #e7ecef<br>texto principal e estrelas</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#9fb0bc" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--texto-suave</strong> · #9fb0bc<br>texto secundário e eixos</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#7f909c" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>placeholder</strong> · #7f909c<br>texto de exemplo em campos</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#f2b544" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--ambar</strong> · #f2b544<br>destaque, botão primário e núcleo</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#c98d1e" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--ambar-escuro</strong> · #c98d1e<br>botão primário pressionado</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#1a1205" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>texto do botão</strong> · #1a1205<br>texto sobre âmbar</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="#5fd3bc" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--fosforo</strong> · #5fd3bc<br>foco, ícones e sinais</p></div>
+      </div>
+      <div class="ds-amostras ds-bloco">
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(214, 226, 235, 0.12)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--linha</strong> · rgba(214, 226, 235, 0.12)<br>divisores e bordas</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(214, 226, 235, 0.24)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>--linha-forte</strong> · rgba(214, 226, 235, 0.24)<br>bordas de botão e campo</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(7, 11, 16, 0.72)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>topo</strong> · rgba(7, 11, 16, 0.72)<br>barra fixa com desfoque</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(12, 19, 27, 0.82)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>legenda</strong> · rgba(12, 19, 27, 0.82)<br>vidro da legenda da órbita</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(242, 181, 68, 0.5)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>plano em destaque</strong> · rgba(242, 181, 68, 0.5)<br>borda do plano Rede</p></div>
+          <div class="ds-amostra"><svg viewBox="0 0 160 72" aria-hidden="true"><rect x="0.5" y="0.5" width="159" height="71" rx="10" fill="rgba(95, 211, 188, 0.45)" stroke="rgba(214, 226, 235, 0.24)"/></svg><p class="ds-legenda"><strong>cartão em hover</strong> · rgba(95, 211, 188, 0.45)<br>borda ao passar o mouse</p></div>
+      </div>
+      <div class="ds-amostras ds-bloco">
+        <div class="ds-amostra"><div class="cartao"><span class="cartao__numero">01</span><h3>Cartão</h3><p>Gradiente de --painel para --noite.</p></div><p class="ds-legenda">.cartao · borda --linha, raio 14px</p></div>
+        <div class="ds-amostra"><div class="plano"><span class="plano__nome">Plano</span><p class="plano__preco">R$ 39</p></div><p class="ds-legenda">.plano · fundo --noite</p></div>
+        <div class="ds-amostra"><div class="plano plano--destaque"><span class="plano__nome">Destaque</span><p class="plano__preco">R$ 29</p></div><p class="ds-legenda">.plano--destaque · brilho âmbar a 10%</p></div>
+        <div class="ds-amostra"><div class="leituras"><div class="leitura"><span class="leitura__nome">Vidro</span><span class="leitura__valor">0,82</span></div></div><p class="ds-legenda">.leituras · grade de 1 px sobre --linha</p></div>
+      </div>
+    </div>
+</section>
+
+<!-- componentes -->
+<section id="componentes" data-vd-secao class="secao" aria-labelledby="titulo-componentes">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Componentes</span>
+          <h2 id="titulo-componentes" class="aparecer">Botões, campos, cartões e eventos.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Passe o mouse para ver os estados de hover e use Tab para ver o foco. O estado desabilitado existe na página original no botão de lista de espera.</p>
+      </div>
+      <div class="ds-palco">
+        <a class="botao" href="#componentes">Começar a observar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+        <a class="botao botao--contorno" href="#componentes">Ver o mapa ao vivo</a>
+        <button class="botao" type="button" disabled>Lista de espera</button>
+      </div>
+      <p class="ds-legenda">.botao (primário) · .botao--contorno (secundário) · :disabled · hover sobe 2 px com sombra âmbar; foco com contorno --fosforo</p>
+      <div class="instrumentos ds-bloco">
+        <article class="cartao">
+          <span class="cartao__numero">01</span>
+          <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/></svg></div>
+          <h3>Cartão de instrumento</h3>
+          <p>No hover, a borda passa para fósforo e o cartão sobe 4 px.</p>
+        </article>
+        <div class="evento">
+          <span class="evento__hora">06:42 · Estação 0417</span>
+          <p><strong>Evento.</strong> Hora em âmbar, título em destaque e explicação em texto suave.</p>
+        </div>
+        <form class="formulario" onsubmit="event.preventDefault()">
+          <label for="ds-email">E-mail de trabalho</label>
+          <input class="campo" id="ds-email" type="email" placeholder="voce@empresa.com.br">
+          <button class="botao" type="submit">Enviar</button>
+        </form>
+      </div>
+      <p class="ds-legenda">.cartao · .evento · .formulario com .campo (foco: borda --fosforo e halo de 4 px)</p>
+    </div>
+</section>
+
+<!-- layout -->
+<section id="layout" data-vd-secao class="secao" aria-labelledby="titulo-layout">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Layout e espaçamento</span>
+          <h2 id="titulo-layout" class="aparecer">Uma moldura de 1180 px e três grades.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Seções com 112 px de respiro vertical e divisor no topo. Abaixo de 900 px, todas as grades viram uma coluna.</p>
+      </div>
+      <div class="ds-palco"><div class="secao__cabeca ds-contexto" style="margin:0"><div class="evento">Coluna de título · 0,9fr</div><div class="evento">Coluna de introdução · 1,1fr</div></div></div>
+      <p class="ds-legenda">.secao__cabeca · 2 colunas (0,9fr 1,1fr), espaço 40 px</p>
+      <div class="ds-palco ds-bloco"><div class="instrumentos" style="margin:0"><div class="evento">1/3</div><div class="evento">2/3</div><div class="evento">3/3</div></div></div>
+      <p class="ds-legenda">.instrumentos · 3 colunas iguais, espaço 20 px</p>
+      <div class="ds-palco ds-bloco"><div class="mapa" style="margin:0"><div class="evento">Gráfico · 1,4fr</div><div class="evento">Eventos · 0,6fr</div></div></div>
+      <p class="ds-legenda">.mapa · 2 colunas (1,4fr 0,6fr), espaço 20 px · .hero__grade usa 1,05fr 0,95fr com 48 px</p>
+    </div>
+</section>
+
+<!-- movimento -->
+<section id="movimento" data-vd-secao class="secao" aria-labelledby="titulo-movimento">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Movimento</span>
+          <h2 id="titulo-movimento" class="aparecer">Lento no céu, rápido na mão.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Animações contínuas e longas no fundo, transições curtas nas interações e revelação suave no scroll. Tudo é desligado com prefers-reduced-motion.</p>
+      </div>
+      <div class="ds-amostras">
+        <div class="ds-amostra"><div class="orbita" aria-hidden="true"><svg viewBox="90 90 340 340"><g class="orbita__anel"><circle cx="260" cy="260" r="150" fill="none" stroke="rgba(214,226,235,0.24)" stroke-dasharray="2 7"/><circle cx="410" cy="260" r="7" fill="#5fd3bc"/></g><circle cx="260" cy="260" r="34" fill="#f2b544"/></svg></div><p class="ds-legenda">girar · 60s linear infinito (.orbita__anel)</p></div>
+        <div class="ds-amostra"><div class="orbita" aria-hidden="true"><svg viewBox="170 170 180 180"><circle class="orbita__sinal" cx="260" cy="260" r="60" fill="none" stroke="#5fd3bc" stroke-width="6"/><circle cx="260" cy="260" r="20" fill="#5fd3bc"/></svg></div><p class="ds-legenda">pulsar · 3,2s ease-in-out infinito (.orbita__sinal)</p></div>
+        <div class="ds-amostra"><div class="orbita" aria-hidden="true"><svg viewBox="170 170 180 180"><circle class="estrela--viva" cx="260" cy="260" r="40" fill="#e7ecef" fill-opacity="0.85"/></svg></div><p class="ds-legenda">cintilar · 4,8s ease-in-out infinito (.estrela--viva)</p></div>
+        <div class="ds-amostra"><div class="cartao aparecer"><h3>Revelação</h3><p>Opacidade e 22 px de subida em 900 ms.</p></div><p class="ds-legenda">.aparecer → .revelado no scroll · atrasos de 120, 240 e 360 ms</p></div>
+      </div>
+      <figure class="mapa__grafico ds-bloco" style="margin:0">
+        <svg viewBox="0 0 720 200" role="img" aria-labelledby="ds-traco"><title id="ds-traco">Linha que se desenha ao entrar na tela</title><path class="traco" d="M40 150 C120 140 160 60 240 80 S360 160 440 120 S600 40 680 70" fill="none" stroke="#f2b544" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </figure>
+      <p class="ds-legenda">.traco · stroke-dashoffset de 1400 a 0 em 2,4s, curva cubic-bezier(0.3, 0.7, 0.2, 1)</p>
+    </div>
+</section>
+
+<!-- icones -->
+<section id="icones" data-vd-secao class="secao" aria-labelledby="titulo-icones">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Ícones</span>
+          <h2 id="titulo-icones" class="aparecer">Traço fino, cor herdada.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Os ícones são SVGs próprios com stroke em currentColor e espessura 1,6 a 2. A marca usa cores fixas e por isso virou arquivo.</p>
+      </div>
+      <div class="ds-palco">
+        <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/></svg></div>
+        <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg></div>
+        <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/><path d="M17 3h4v4"/></svg></div>
+        <a class="botao" href="#icones">Herda o escuro do botão <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <a class="botao botao--contorno" href="#icones">Herda o claro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <img src="assets/ds/svg/marca-observatorio.svg" alt="Marca do Observatório: núcleo âmbar com satélite em fósforo" width="42" height="42">
+      </div>
+      <p class="ds-legenda">20 px dentro de .cartao__icone (cor --fosforo) · 16 px dentro de .botao (cor do texto) · marca em arquivo SVG (cores fixas)</p>
+    </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="moldura rodape__barra">
+    <span>Design system extraído do Observatório com o framework Vibe Design.</span>
+    <span>Valores medidos em 1440 px.</span>
+  </div>
+</footer>
+
+<!-- revelação no scroll e contador do hero (era um <script> inline na fonte) -->
+<script src="assets/ds/js/revelacao.js"></script>
+</body>
+</html>

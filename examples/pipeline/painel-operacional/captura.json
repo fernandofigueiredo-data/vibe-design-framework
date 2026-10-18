@@ -1,0 +1,109 @@
+{
+  "versao": "1.0",
+  "url": "http://127.0.0.1:55699/index.html",
+  "url_documento": "http://127.0.0.1:55699/index.html",
+  "base": "http://127.0.0.1:55699/index.html",
+  "data": "2026-10-18T12:09:10+00:00",
+  "viewport": {
+    "largura": 1440,
+    "altura": 900
+  },
+  "modo": "fidelidade",
+  "charset": "utf-8",
+  "srcdoc": false,
+  "recursos": [
+    {
+      "url": "http://127.0.0.1:55699/assets/css/fontes.css",
+      "aliases": [],
+      "arquivo": "assets/fontes_b23741a9942d.css",
+      "tipo": "text/css; charset=utf-8",
+      "bytes": 1092,
+      "sha256": "1fe6b5650edb1104fe49e241da3d3234d2340f0bb085fd2a967aa01569db9811",
+      "origem": "rede",
+      "reescrito": true
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-mono-latin-400-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-mono-latin-400-normal_894cd1f3d6fb.woff2",
+      "tipo": "font/woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-mono-latin-500-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-mono-latin-500-normal_d537dd69b02a.woff2",
+      "tipo": "font/woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-sans-latin-400-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-sans-latin-400-normal_b5d92d1247fd.woff2",
+      "tipo": "font/woff2",
+      "bytes": 22588,
+      "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-sans-latin-500-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-sans-latin-500-normal_8280fe59337a.woff2",
+      "tipo": "font/woff2",
+      "bytes": 24184,
+      "sha256": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-sans-latin-600-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-sans-latin-600-normal_3d1204e6fe3b.woff2",
+      "tipo": "font/woff2",
+      "bytes": 24252,
+      "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/fontes/ibm-plex-sans-latin-700-normal.woff2",
+      "aliases": [],
+      "arquivo": "assets/ibm-plex-sans-latin-700-normal_001796adbafa.woff2",
+      "tipo": "font/woff2",
+      "bytes": 22832,
+      "sha256": "42e7b0c143c19df9d99fd896e76b48f846edf0902d200bc29796b34d12c33aa7",
+      "origem": "complemento",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/js/lucide.min.js",
+      "aliases": [],
+      "arquivo": "assets/lucide_min_688bf7aeebeb.js",
+      "tipo": "text/javascript; charset=utf-8",
+      "bytes": 454638,
+      "sha256": "89520d7fe5af181b5d32ecee6a41e5c2c01a45540536c322f4970626b7267633",
+      "origem": "rede",
+      "reescrito": false
+    },
+    {
+      "url": "http://127.0.0.1:55699/assets/js/tailwind-browser.js",
+      "aliases": [],
+      "arquivo": "assets/tailwind-browser_47b6dac6f6ef.js",
+      "tipo": "text/javascript; charset=utf-8",
+      "bytes": 282289,
+      "sha256": "a60c785630a06196808cbe79e6f7bdb4abcc8f4421a47b56f29338fc84805e3b",
+      "origem": "rede",
+      "reescrito": false
+    }
+  ],
+  "omitidos": [],
+  "neutralizados": [],
+  "alteracoes": []
+}

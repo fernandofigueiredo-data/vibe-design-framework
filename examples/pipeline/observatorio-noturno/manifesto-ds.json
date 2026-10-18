@@ -1,0 +1,518 @@
+{
+  "versao": "1.0",
+  "fonte": "index.html",
+  "pagina_analisada": "index.html",
+  "hash_fonte": "c3857d0700994bc81f7ddfd583bf3a7ef3223888cba39fe8c241624675a795b8",
+  "idioma_fonte": "pt-br",
+  "bibliotecas": [],
+  "classes": [
+    "aparecer",
+    "atraso-1",
+    "atraso-2",
+    "atraso-3",
+    "botao",
+    "botao--contorno",
+    "campo",
+    "cartao",
+    "cartao__icone",
+    "cartao__numero",
+    "contato",
+    "estrela--viva",
+    "evento",
+    "evento__hora",
+    "formulario",
+    "hero",
+    "hero__acoes",
+    "hero__ceu",
+    "hero__grade",
+    "hero__texto",
+    "instrumentos",
+    "leitura",
+    "leitura__nome",
+    "leitura__valor",
+    "leituras",
+    "mapa",
+    "mapa__grafico",
+    "mapa__lado",
+    "marca",
+    "menu",
+    "moldura",
+    "orbita",
+    "orbita__anel",
+    "orbita__anel--lento",
+    "orbita__legenda",
+    "orbita__sinal",
+    "plano",
+    "plano--destaque",
+    "plano__nome",
+    "plano__preco",
+    "planos",
+    "revelado",
+    "rodape",
+    "rodape__barra",
+    "rotulo",
+    "secao",
+    "secao__cabeca",
+    "secao__intro",
+    "topo",
+    "topo__barra",
+    "traco"
+  ],
+  "cores": [
+    "#070b10",
+    "#0c131b",
+    "#101a24",
+    "#1a1205",
+    "#5fd3bc",
+    "#7f909c",
+    "#9fb0bc",
+    "#c98d1e",
+    "#e7ecef",
+    "#f2b544",
+    "rgb(12,19,27,0.82)",
+    "rgb(214,226,235,0.12)",
+    "rgb(214,226,235,0.24)",
+    "rgb(242,181,68,0.08)",
+    "rgb(242,181,68,0.10)",
+    "rgb(242,181,68,0.5)",
+    "rgb(242,181,68,0.65)",
+    "rgb(7,11,16,0.72)",
+    "rgb(95,211,188,0.10)",
+    "rgb(95,211,188,0.15)",
+    "rgb(95,211,188,0.45)",
+    "rgb(95,211,188,0.6)"
+  ],
+  "fontes": [
+    "georgia",
+    "instrument serif",
+    "iowan old style",
+    "jetbrains mono",
+    "menlo",
+    "monospace",
+    "serif",
+    "sfmono-regular",
+    "ui-monospace"
+  ],
+  "keyframes": [
+    "cintilar",
+    "girar",
+    "pulsar"
+  ],
+  "transicoes": [
+    "animation-direction: reverse",
+    "animation-duration: 140s",
+    "animation: cintilar 4.8s ease-in-out infinite",
+    "animation: girar 60s linear infinite",
+    "animation: none !important",
+    "animation: pulsar 3.2s ease-in-out infinite",
+    "transition-delay: 120ms",
+    "transition-delay: 240ms",
+    "transition-delay: 360ms",
+    "transition: border-color 200ms ease, box-shadow 200ms ease",
+    "transition: border-color 260ms ease, transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "transition: color 200ms ease",
+    "transition: none !important",
+    "transition: opacity 900ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "transition: stroke-dashoffset 2.4s cubic-bezier(0.3, 0.7, 0.2, 1)",
+    "transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease, background-color 220ms ease",
+    "transition: transform 220ms ease"
+  ],
+  "estados": {
+    "seletores_css": [
+      ".botao--contorno:hover",
+      ".botao:active",
+      ".botao:disabled, .botao[aria-disabled=\"true\"]",
+      ".botao:focus-visible",
+      ".botao:hover",
+      ".botao:hover svg",
+      ".campo:focus",
+      ".cartao:hover",
+      ".menu a:hover",
+      ":focus-visible"
+    ],
+    "classes": []
+  },
+  "icones": {
+    "A_lucide": [],
+    "B_heranca": {
+      "quantidade": 5,
+      "exemplos": [
+        "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(1) > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(2) > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(3) > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > form:nth-of-type(1) > button:nth-of-type(1) > svg:nth-of-type(1)"
+      ]
+    },
+    "C_cores_fixas": {
+      "quantidade": 4,
+      "exemplos": [
+        "body > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > figure:nth-of-type(1) > svg:nth-of-type(1)"
+      ]
+    },
+    "D_iconify": []
+  },
+  "total_icones": 9,
+  "hero": {
+    "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+    "tag": "section",
+    "classes": "hero"
+  },
+  "secoes": [
+    {
+      "seletor": "body > header:nth-of-type(1)",
+      "tag": "header",
+      "id": "",
+      "classes": "topo",
+      "titulo": ""
+    },
+    {
+      "seletor": "body > main:nth-of-type(1)",
+      "tag": "main",
+      "id": "inicio",
+      "classes": "",
+      "titulo": "Cada sensor da sua rede, lido como um céu mapeado."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+      "tag": "section",
+      "id": "",
+      "classes": "hero",
+      "titulo": "Cada sensor da sua rede, lido como um céu mapeado."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2)",
+      "tag": "section",
+      "id": "instrumentos",
+      "classes": "secao",
+      "titulo": "Três lentes para o mesmo céu."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3)",
+      "tag": "section",
+      "id": "mapa",
+      "classes": "secao",
+      "titulo": "As últimas 24 horas, em uma linha."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4)",
+      "tag": "section",
+      "id": "planos",
+      "classes": "secao",
+      "titulo": "Comece com uma estação. Cresça para um país."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5)",
+      "tag": "section",
+      "id": "contato",
+      "classes": "secao",
+      "titulo": "Mostre-nos a sua rede."
+    },
+    {
+      "seletor": "body > footer:nth-of-type(1)",
+      "tag": "footer",
+      "id": "",
+      "classes": "rodape",
+      "titulo": ""
+    }
+  ],
+  "css_locais": [
+    "assets/observatorio_dd78fa76af3d.css"
+  ],
+  "blocos_inline": {
+    "style": 1,
+    "script": 1
+  },
+  "assets": [
+    "assets/instrument-serif-latin-400-normal_eb2fa9c2b36a.woff2",
+    "assets/observatorio_dd78fa76af3d.css"
+  ],
+  "tipografia": [
+    {
+      "estilo": "Título 1",
+      "tag": "h1",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "classes": "aparecer atraso-1 revelado",
+      "familia": "\"Instrument Serif\", \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "92px",
+      "entrelinha": "90.2px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "-1.84px",
+      "caixa": "none",
+      "exemplo_texto": "Cada sensor da sua rede, lido como um ."
+    },
+    {
+      "estilo": "Título 2",
+      "tag": "h2",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "classes": "aparecer",
+      "familia": "\"Instrument Serif\", \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "58px",
+      "entrelinha": "60.3px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.87px",
+      "caixa": "none",
+      "exemplo_texto": "Comece com uma estação. Cresça para um país."
+    },
+    {
+      "estilo": "Título 3",
+      "tag": "h3",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"Instrument Serif\", \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "28px",
+      "entrelinha": "30.8px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Previsão de órbita"
+    },
+    {
+      "estilo": "Negrito G",
+      "tag": "button",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "classes": "botao",
+      "familia": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "tamanho": "13px",
+      "entrelinha": "13px",
+      "peso": 600,
+      "estilo_fonte": "normal",
+      "espacamento": "0.52px",
+      "caixa": "none",
+      "exemplo_texto": "Lista de espera em novembro"
+    },
+    {
+      "estilo": "Parágrafo",
+      "tag": "p",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "tamanho": "14px",
+      "entrelinha": "23.1px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Cada alerta chega com as variáveis que mais pesaram: vento, horário de pico, man"
+    },
+    {
+      "estilo": "Regular G",
+      "tag": "p",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "classes": "secao__intro aparecer atraso-1",
+      "familia": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "tamanho": "15px",
+      "entrelinha": "24.8px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Cada lente responde a uma pergunta da operação: o que está acontecendo agora, po"
+    },
+    {
+      "estilo": "Regular M",
+      "tag": "a",
+      "seletor_exemplo": "body > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "tamanho": "13px",
+      "entrelinha": "21.4px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Instrumentos"
+    },
+    {
+      "estilo": "Regular P",
+      "tag": "span",
+      "seletor_exemplo": "body > footer:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "tamanho": "12px",
+      "entrelinha": "19.8px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "© 2026 Observatório. Página fictícia criada como exemplo do framework Vibe Desig"
+    }
+  ],
+  "componentes": {
+    "botoes": [
+      {
+        "tag": "a",
+        "classes": "botao botao--contorno",
+        "seletor": "body > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "texto": "Agendar demonstração",
+        "desabilitado": false,
+        "ocorrencias": 3
+      },
+      {
+        "tag": "button",
+        "classes": "botao",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+        "texto": "Lista de espera em novembro",
+        "desabilitado": true,
+        "ocorrencias": 2
+      },
+      {
+        "tag": "a",
+        "classes": "botao",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "texto": "Começar a observar",
+        "desabilitado": false,
+        "ocorrencias": 1
+      }
+    ],
+    "campos": [
+      {
+        "tag": "input",
+        "tipo": "email",
+        "classes": "campo",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > form:nth-of-type(1) > input:nth-of-type(1)",
+        "ocorrencias": 2
+      }
+    ],
+    "cartoes": [
+      {
+        "tag": "article",
+        "classes": "cartao aparecer",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(1)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "cartao aparecer atraso-1",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(2)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "cartao aparecer atraso-2",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(3)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "div",
+        "classes": "evento aparecer atraso-1",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "div",
+        "classes": "evento aparecer atraso-2",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "div",
+        "classes": "evento aparecer atraso-3",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3)",
+        "ocorrencias": 1
+      }
+    ]
+  },
+  "layout": {
+    "conteineres": [],
+    "grades": [
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "moldura hero__grade",
+        "colunas": "594.297px 537.703px",
+        "espaco": "48px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > dl:nth-of-type(1)",
+        "classes": "leituras aparecer atraso-3 revelado",
+        "colunas": "196.766px 196.766px 196.766px",
+        "espaco": "1px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "secao__cabeca",
+        "colunas": "513px 627px",
+        "espaco": "40px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+        "classes": "instrumentos",
+        "colunas": "380px 380px 380px",
+        "espaco": "20px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "secao__cabeca",
+        "colunas": "513px 627px",
+        "espaco": "40px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2)",
+        "classes": "mapa",
+        "colunas": "812px 348px",
+        "espaco": "20px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "secao__cabeca",
+        "colunas": "513px 627px",
+        "espaco": "40px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2)",
+        "classes": "planos",
+        "colunas": "580px 580px",
+        "espaco": "20px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1)",
+        "classes": "moldura contato",
+        "colunas": "566px 566px",
+        "espaco": "48px"
+      }
+    ],
+    "secoes": [
+      {
+        "seletor": "body > header:nth-of-type(1)",
+        "classes": "topo",
+        "padding": "0px 0px 0px 0px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+        "classes": "hero",
+        "padding": "96px 0px 72px 0px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2)",
+        "classes": "secao",
+        "padding": "112px 0px 112px 0px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3)",
+        "classes": "secao",
+        "padding": "112px 0px 112px 0px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4)",
+        "classes": "secao",
+        "padding": "112px 0px 112px 0px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5)",
+        "classes": "secao",
+        "padding": "112px 0px 112px 0px"
+      },
+      {
+        "seletor": "body > footer:nth-of-type(1)",
+        "classes": "rodape",
+        "padding": "40px 0px 56px 0px"
+      }
+    ]
+  }
+}

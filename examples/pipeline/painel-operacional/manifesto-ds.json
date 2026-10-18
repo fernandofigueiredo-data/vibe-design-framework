@@ -1,0 +1,608 @@
+{
+  "versao": "1.0",
+  "fonte": "index.html",
+  "pagina_analisada": "index.html",
+  "hash_fonte": "932b0efab8339c906883f3d7a6d0c25053bef7c9e9394aedafb003d5469963d0",
+  "idioma_fonte": "pt-br",
+  "bibliotecas": [
+    {
+      "nome": "Tailwind CSS",
+      "evidencias": [
+        "assets/tailwind-browser_47b6dac6f6ef.js",
+        "html:type=[\\\"']text/tailwindcss"
+      ]
+    },
+    {
+      "nome": "Lucide",
+      "evidencias": [
+        "assets/lucide_min_688bf7aeebeb.js",
+        "html:data-lucide="
+      ]
+    }
+  ],
+  "classes": [
+    "-translate-y-1/2",
+    "[animation-delay:100ms]",
+    "[animation-delay:160ms]",
+    "[animation-delay:200ms]",
+    "[animation-delay:240ms]",
+    "[animation-delay:300ms]",
+    "[animation-delay:80ms]",
+    "absolute",
+    "active:scale-[0.98]",
+    "animate-crescer",
+    "animate-entrada",
+    "animate-ping",
+    "antialiased",
+    "backdrop-blur",
+    "bg-agua",
+    "bg-alerta-fundo",
+    "bg-cartao",
+    "bg-grafite",
+    "bg-ok",
+    "bg-ok-fundo",
+    "bg-papel",
+    "bg-papel/90",
+    "bg-sinal",
+    "bg-sinal-texto",
+    "border",
+    "border-b",
+    "border-fio",
+    "border-r",
+    "bottom-0",
+    "divide-fio",
+    "divide-y",
+    "flex",
+    "flex-1",
+    "flex-col",
+    "flex-wrap",
+    "focus:border-grafite",
+    "focus:outline-none",
+    "font-medium",
+    "font-mono",
+    "font-sans",
+    "font-semibold",
+    "gap-1",
+    "gap-1.5",
+    "gap-2",
+    "gap-3",
+    "gap-4",
+    "gap-8",
+    "grid",
+    "h-0.5",
+    "h-48",
+    "h-[31%]",
+    "h-[64%]",
+    "h-[76%]",
+    "h-[82%]",
+    "h-full",
+    "hidden",
+    "hover:bg-papel",
+    "hover:bg-sinal-texto",
+    "hover:border-grafite",
+    "hover:text-grafite",
+    "hover:underline",
+    "inline-flex",
+    "inset-x-0",
+    "items-center",
+    "items-end",
+    "justify-between",
+    "justify-center",
+    "justify-end",
+    "left-3",
+    "lg:flex",
+    "lg:grid",
+    "lg:grid-cols-[248px_1fr]",
+    "lucide",
+    "lucide-activity",
+    "lucide-bell",
+    "lucide-chevron-right",
+    "lucide-download",
+    "lucide-droplets",
+    "lucide-filter",
+    "lucide-gauge",
+    "lucide-layout-dashboard",
+    "lucide-map",
+    "lucide-plus",
+    "lucide-search",
+    "lucide-waves",
+    "lucide-wrench",
+    "m-0",
+    "md:flex",
+    "md:ml-0",
+    "md:px-8",
+    "md:py-8",
+    "md:text-2xl",
+    "min-h-screen",
+    "min-w-0",
+    "min-w-[560px]",
+    "ml-auto",
+    "mt-1",
+    "mt-2",
+    "mt-3",
+    "mt-4",
+    "mt-5",
+    "mt-auto",
+    "opacity-60",
+    "origin-bottom",
+    "overflow-hidden",
+    "overflow-x-auto",
+    "p-4",
+    "p-5",
+    "pl-9",
+    "place-items-center",
+    "placeholder:text-grafite-suave",
+    "pointer-events-none",
+    "pr-3",
+    "pt-2",
+    "px-2.5",
+    "px-3",
+    "px-4",
+    "px-5",
+    "py-1",
+    "py-2",
+    "py-2.5",
+    "py-3",
+    "py-3.5",
+    "py-4",
+    "py-6",
+    "relative",
+    "right-2",
+    "rounded-full",
+    "rounded-lg",
+    "rounded-md",
+    "rounded-xl",
+    "size-10",
+    "size-2",
+    "size-4",
+    "size-5",
+    "size-9",
+    "size-full",
+    "sm:grid-cols-2",
+    "sm:inline-flex",
+    "space-y-1",
+    "space-y-6",
+    "sr-only",
+    "sticky",
+    "text-3xl",
+    "text-alerta-texto",
+    "text-base",
+    "text-fio",
+    "text-grafite",
+    "text-grafite-suave",
+    "text-left",
+    "text-lg",
+    "text-ok",
+    "text-papel",
+    "text-sinal-texto",
+    "text-sm",
+    "text-white",
+    "text-xl",
+    "text-xs",
+    "top-0",
+    "top-1/2",
+    "top-2",
+    "tracking-[0.18em]",
+    "tracking-tight",
+    "tracking-wider",
+    "transition",
+    "transition-colors",
+    "truncate",
+    "uppercase",
+    "w-4",
+    "w-72",
+    "w-full",
+    "whitespace-nowrap",
+    "xl:grid-cols-4",
+    "xl:grid-cols-[1.6fr_1fr]",
+    "z-10"
+  ],
+  "cores": [
+    "#17181a",
+    "#1d7a46",
+    "#1f5f8b",
+    "#55595f",
+    "#8a5a00",
+    "#b23d0c",
+    "#dedfd8",
+    "#e3f1e8",
+    "#e5531a",
+    "#f4f4f0",
+    "#fbf0d6",
+    "#ffffff"
+  ],
+  "fontes": [
+    "arial",
+    "helvetica neue",
+    "ibm plex mono",
+    "ibm plex sans",
+    "menlo",
+    "monospace",
+    "sans-serif",
+    "ui-monospace"
+  ],
+  "keyframes": [
+    "crescer",
+    "entrada"
+  ],
+  "transicoes": [
+    "animation: none !important",
+    "transition: none !important"
+  ],
+  "estados": {
+    "seletores_css": [
+      ":focus-visible"
+    ],
+    "classes": [
+      "active:scale-[0.98]",
+      "focus:border-grafite",
+      "focus:outline-none",
+      "hover:bg-papel",
+      "hover:bg-sinal-texto",
+      "hover:border-grafite",
+      "hover:text-grafite",
+      "hover:underline"
+    ]
+  },
+  "icones": {
+    "A_lucide": [
+      {
+        "nome": "activity",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "bell",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "chevron-right",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "download",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "droplets",
+        "ocorrencias": 2
+      },
+      {
+        "nome": "filter",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "gauge",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "layout-dashboard",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "map",
+        "ocorrencias": 2
+      },
+      {
+        "nome": "plus",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "search",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "waves",
+        "ocorrencias": 1
+      },
+      {
+        "nome": "wrench",
+        "ocorrencias": 2
+      }
+    ],
+    "B_heranca": {
+      "quantidade": 2,
+      "exemplos": [
+        "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > figure:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > svg:nth-of-type(1)"
+      ]
+    },
+    "C_cores_fixas": {
+      "quantidade": 0,
+      "exemplos": []
+    },
+    "D_iconify": []
+  },
+  "total_icones": 18,
+  "hero": {
+    "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+    "tag": "header",
+    "classes": "sticky top-0 z-10 flex items-center gap-4 border-b border-fio bg-papel/90 px-5 py-4 backdrop-blur md:px-8"
+  },
+  "secoes": [
+    {
+      "seletor": "body > div:nth-of-type(1)",
+      "tag": "div",
+      "id": "",
+      "classes": "min-h-screen lg:grid lg:grid-cols-[248px_1fr]",
+      "titulo": "Painel operacional"
+    },
+    {
+      "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+      "tag": "div",
+      "id": "",
+      "classes": "min-w-0",
+      "titulo": "Painel operacional"
+    }
+  ],
+  "css_locais": [
+    "assets/fontes_b23741a9942d.css"
+  ],
+  "blocos_inline": {
+    "style": 1,
+    "script": 1
+  },
+  "assets": [
+    "assets/fontes_b23741a9942d.css",
+    "assets/lucide_min_688bf7aeebeb.js",
+    "assets/tailwind-browser_47b6dac6f6ef.js"
+  ],
+  "tipografia": [
+    {
+      "estilo": "Título 1",
+      "tag": "h1",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "classes": "truncate text-xl font-semibold tracking-tight md:text-2xl",
+      "familia": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "24px",
+      "entrelinha": "32px",
+      "peso": 600,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.6px",
+      "caixa": "none",
+      "exemplo_texto": "Painel operacional"
+    },
+    {
+      "estilo": "Título 2",
+      "tag": "h2",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "classes": "font-medium",
+      "familia": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "16px",
+      "entrelinha": "24px",
+      "peso": 500,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Ocorrências em andamento"
+    },
+    {
+      "estilo": "Negrito G",
+      "tag": "a",
+      "seletor_exemplo": "body > div:nth-of-type(1) > aside:nth-of-type(1) > a:nth-of-type(1)",
+      "classes": "flex items-center gap-3 font-semibold tracking-tight text-lg",
+      "familia": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "18px",
+      "entrelinha": "28px",
+      "peso": 600,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.45px",
+      "caixa": "none",
+      "exemplo_texto": "Serra Azul"
+    },
+    {
+      "estilo": "Parágrafo",
+      "tag": "p",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1) > p:nth-of-type(1)",
+      "classes": "mt-4 rounded-lg bg-alerta-fundo px-3 py-2 text-sm text-alerta-texto",
+      "familia": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "14px",
+      "entrelinha": "20px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "R3 abaixo de 35%: bombeamento extra programado para 02:30."
+    },
+    {
+      "estilo": "Regular G",
+      "tag": "p",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "classes": "mt-3 font-mono text-3xl font-medium tracking-tight",
+      "familia": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace",
+      "tamanho": "30px",
+      "entrelinha": "36px",
+      "peso": 500,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.75px",
+      "caixa": "none",
+      "exemplo_texto": "32,4"
+    },
+    {
+      "estilo": "Regular M",
+      "tag": "span",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+      "classes": "text-base text-grafite-suave",
+      "familia": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace",
+      "tamanho": "16px",
+      "entrelinha": "24px",
+      "peso": 500,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.75px",
+      "caixa": "none",
+      "exemplo_texto": "mca"
+    },
+    {
+      "estilo": "Regular P",
+      "tag": "p",
+      "seletor_exemplo": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "classes": "font-mono text-xs uppercase tracking-[0.18em] text-grafite-suave",
+      "familia": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace",
+      "tamanho": "12px",
+      "entrelinha": "16px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "2.16px",
+      "caixa": "uppercase",
+      "exemplo_texto": "Rede de abastecimento"
+    }
+  ],
+  "componentes": {
+    "botoes": [
+      {
+        "tag": "button",
+        "classes": "inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+        "texto": "Filtrar",
+        "desabilitado": false,
+        "ocorrencias": 2
+      },
+      {
+        "tag": "a",
+        "classes": "flex items-center gap-3 rounded-lg bg-papel px-3 py-2.5 font-medium",
+        "seletor": "body > div:nth-of-type(1) > aside:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "texto": "Visão geral",
+        "desabilitado": false,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "button",
+        "classes": "mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite",
+        "seletor": "body > div:nth-of-type(1) > aside:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+        "texto": "Passagem de turno às 06:00",
+        "desabilitado": true,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "button",
+        "classes": "relative ml-auto grid size-10 place-items-center rounded-lg border border-fio bg-cartao transition hover:border-grafite md:ml-0",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > button:nth-of-type(1)",
+        "texto": "",
+        "desabilitado": false,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "a",
+        "classes": "hidden items-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto sm:inline-flex",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > a:nth-of-type(1)",
+        "texto": "Abrir ocorrência",
+        "desabilitado": false,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "button",
+        "classes": "mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto active:scale-[0.98]",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > button:nth-of-type(1)",
+        "texto": "Abrir mapa da zona Norte",
+        "desabilitado": false,
+        "ocorrencias": 1
+      }
+    ],
+    "campos": [
+      {
+        "tag": "input",
+        "tipo": "search",
+        "classes": "w-72 rounded-lg border border-fio bg-cartao py-2 pl-9 pr-3 text-sm placeholder:text-grafite-suave focus:border-grafite focus:outline-none",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > input:nth-of-type(1)",
+        "ocorrencias": 1
+      }
+    ],
+    "cartoes": [
+      {
+        "tag": "div",
+        "classes": "mt-auto rounded-xl border border-fio p-4 text-sm",
+        "seletor": "body > div:nth-of-type(1) > aside:nth-of-type(1) > div:nth-of-type(1)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "animate-entrada rounded-xl border border-fio bg-cartao p-5",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(1)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:80ms]",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(2)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:160ms]",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(3)",
+        "ocorrencias": 1
+      },
+      {
+        "tag": "article",
+        "classes": "animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:240ms]",
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > article:nth-of-type(4)",
+        "ocorrencias": 1
+      }
+    ]
+  },
+  "layout": {
+    "conteineres": [],
+    "grades": [
+      {
+        "seletor": "body > div:nth-of-type(1)",
+        "classes": "min-h-screen lg:grid lg:grid-cols-[248px_1fr]",
+        "colunas": "248px 1192px",
+        "espaco": "normal"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2)",
+        "classes": "grid gap-4 sm:grid-cols-2 xl:grid-cols-4",
+        "colunas": "270px 270px 270px 270px",
+        "espaco": "16px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3)",
+        "classes": "grid gap-4 xl:grid-cols-[1.6fr_1fr]",
+        "colunas": "684.297px 427.703px",
+        "espaco": "16px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "grid gap-4 xl:grid-cols-[1.6fr_1fr]",
+        "colunas": "684.297px 427.703px",
+        "espaco": "16px"
+      }
+    ],
+    "secoes": [
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+        "classes": "sticky top-0 z-10 flex items-center gap-4 border-b border-fio bg-papel/90 px-5 py-4 backdrop-blur md:px-8",
+        "padding": "16px 32px 16px 32px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1)",
+        "classes": "space-y-6",
+        "padding": "0px 0px 0px 0px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+        "classes": "rounded-xl border border-fio bg-cartao p-5",
+        "padding": "20px 20px 20px 20px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "grid gap-4 xl:grid-cols-[1.6fr_1fr]",
+        "padding": "0px 0px 0px 0px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+        "classes": "min-w-0 rounded-xl border border-fio bg-cartao",
+        "padding": "0px 0px 0px 0px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2)",
+        "classes": "rounded-xl border border-fio bg-cartao p-5",
+        "padding": "20px 20px 20px 20px"
+      },
+      {
+        "seletor": "body > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(1)",
+        "classes": "pt-2 text-xs text-grafite-suave",
+        "padding": "8px 0px 0px 0px"
+      }
+    ]
+  }
+}

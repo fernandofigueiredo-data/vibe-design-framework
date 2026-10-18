@@ -1,0 +1,16 @@
+# Ambiente
+.venv/
+__pycache__/
+*.py[oc]
+.DS_Store
+
+# Referências e sites de terceiros capturados localmente: nunca versionar
+referencias/
+sites/
+.vd-tmp/
+
+# Saídas temporárias de verificação
+docs/validacao/tmp/
+
+# Prints de verificação de captura (pesados, regeneráveis)
+**/.vd/prints/

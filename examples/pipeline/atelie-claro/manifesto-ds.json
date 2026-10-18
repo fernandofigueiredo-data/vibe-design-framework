@@ -1,0 +1,430 @@
+{
+  "versao": "1.0",
+  "fonte": "index.html",
+  "pagina_analisada": "index.html",
+  "hash_fonte": "4e337f5caf823987bbbb0a228c02f364a6b28c878e3e7775e9d92346ac9a972d",
+  "idioma_fonte": "pt-br",
+  "bibliotecas": [],
+  "classes": [
+    "abertura",
+    "abertura__acoes",
+    "abertura__rodape",
+    "abertura__titulo",
+    "bloco",
+    "bloco__cabeca",
+    "bloco__intro",
+    "bloco__titulo",
+    "cabecalho",
+    "cabecalho__extra",
+    "cabecalho__menu",
+    "cabecalho__nome",
+    "coluna",
+    "convite",
+    "convite--vazado",
+    "etapa",
+    "etapa__marca",
+    "fechamento",
+    "fechamento__dados",
+    "fechamento__frase",
+    "final",
+    "indice",
+    "linha-texto",
+    "metodo",
+    "numero",
+    "numeros",
+    "obra",
+    "obra__ano",
+    "obra__lugar",
+    "obra__nome",
+    "obra__numero",
+    "obra__planta",
+    "prancha",
+    "prancha__legenda",
+    "revelar",
+    "sobrescrito",
+    "tracado",
+    "tracado--2",
+    "tracado--3",
+    "visto"
+  ],
+  "cores": [
+    "#1c1b18",
+    "#57534a",
+    "#6f7d63",
+    "#7f3517",
+    "#a3461f",
+    "#c4602f",
+    "#e8e1d3",
+    "#f3efe6",
+    "rgb(28,27,24,0.16)"
+  ],
+  "fontes": [
+    "arial",
+    "fraunces",
+    "georgia",
+    "helvetica neue",
+    "instrument sans",
+    "iowan old style",
+    "sans-serif",
+    "serif"
+  ],
+  "keyframes": [
+    "desenhar",
+    "subir",
+    "surgir"
+  ],
+  "transicoes": [
+    "animation-delay: 1100ms",
+    "animation-delay: 140ms",
+    "animation-delay: 280ms",
+    "animation-delay: 700ms",
+    "animation: desenhar 2600ms cubic-bezier(0.4, 0.1, 0.2, 1) 300ms forwards",
+    "animation: none !important",
+    "animation: subir 1100ms cubic-bezier(0.2, 0.75, 0.15, 1) forwards",
+    "animation: surgir 900ms ease 700ms forwards",
+    "animation: surgir 900ms ease 850ms forwards",
+    "transition: background-color 280ms ease, color 280ms ease, gap 280ms ease",
+    "transition: background-size 320ms ease",
+    "transition: color 300ms ease, transform 360ms ease",
+    "transition: none !important",
+    "transition: opacity 1000ms ease, transform 1000ms cubic-bezier(0.2, 0.75, 0.15, 1)",
+    "transition: padding 360ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 360ms ease"
+  ],
+  "estados": {
+    "seletores_css": [
+      ".cabecalho__menu a:hover",
+      ".convite--vazado:hover",
+      ".convite:active",
+      ".convite:hover",
+      ".obra:hover",
+      ".obra:hover .obra__planta",
+      ":focus-visible"
+    ],
+    "classes": []
+  },
+  "icones": {
+    "A_lucide": [],
+    "B_heranca": {
+      "quantidade": 6,
+      "exemplos": [
+        "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(1) > figure:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > svg:nth-of-type(1)",
+        "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > svg:nth-of-type(1)"
+      ]
+    },
+    "C_cores_fixas": {
+      "quantidade": 0,
+      "exemplos": []
+    },
+    "D_iconify": []
+  },
+  "total_icones": 6,
+  "hero": {
+    "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+    "tag": "section",
+    "classes": "abertura coluna"
+  },
+  "secoes": [
+    {
+      "seletor": "body > header:nth-of-type(1)",
+      "tag": "header",
+      "id": "",
+      "classes": "cabecalho coluna",
+      "titulo": ""
+    },
+    {
+      "seletor": "body > main:nth-of-type(1)",
+      "tag": "main",
+      "id": "topo",
+      "classes": "",
+      "titulo": "Casas que respiram devagar."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+      "tag": "section",
+      "id": "",
+      "classes": "abertura coluna",
+      "titulo": "Casas que respiram devagar."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2)",
+      "tag": "section",
+      "id": "obras",
+      "classes": "bloco coluna",
+      "titulo": "Doze anos, catorze casas."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3)",
+      "tag": "section",
+      "id": "metodo",
+      "classes": "bloco coluna",
+      "titulo": "Quatro estações antes da primeira parede."
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4)",
+      "tag": "section",
+      "id": "",
+      "classes": "bloco coluna",
+      "titulo": "Em números"
+    },
+    {
+      "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5)",
+      "tag": "section",
+      "id": "contato",
+      "classes": "bloco coluna",
+      "titulo": "Tem um terreno e tempo? Vamos caminhar por ele."
+    },
+    {
+      "seletor": "body > footer:nth-of-type(1)",
+      "tag": "footer",
+      "id": "",
+      "classes": "final coluna",
+      "titulo": ""
+    }
+  ],
+  "css_locais": [
+    "assets/atelie_cdb5ff0db780.css"
+  ],
+  "blocos_inline": {
+    "style": 0,
+    "script": 1
+  },
+  "assets": [
+    "assets/atelie_cdb5ff0db780.css",
+    "assets/selo_abd6ec63baa5.svg"
+  ],
+  "tipografia": [
+    {
+      "estilo": "Título 2",
+      "tag": "h2",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "classes": "bloco__titulo revelar",
+      "familia": "Fraunces, \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "72px",
+      "entrelinha": "72px",
+      "peso": 360,
+      "estilo_fonte": "normal",
+      "espacamento": "-2.16px",
+      "caixa": "none",
+      "exemplo_texto": "Quatro estações antes da primeira parede."
+    },
+    {
+      "estilo": "Título 3",
+      "tag": "h3",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "classes": "obra__nome",
+      "familia": "Fraunces, \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "36px",
+      "entrelinha": "39.6px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "-0.72px",
+      "caixa": "none",
+      "exemplo_texto": "Casa do"
+    },
+    {
+      "estilo": "Negrito G",
+      "tag": "a",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "classes": "convite",
+      "familia": "\"Instrument Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "14px",
+      "entrelinha": "14px",
+      "peso": 600,
+      "estilo_fonte": "normal",
+      "espacamento": "0.84px",
+      "caixa": "uppercase",
+      "exemplo_texto": "Conversar sobre um terreno"
+    },
+    {
+      "estilo": "Parágrafo",
+      "tag": "p",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"Instrument Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "15px",
+      "entrelinha": "24px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "Visitas ao terreno em horários diferentes, conversas com a família e um inventár"
+    },
+    {
+      "estilo": "Regular G",
+      "tag": "em",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1) > h3:nth-of-type(1) > em:nth-of-type(1)",
+      "classes": "",
+      "familia": "Fraunces, \"Iowan Old Style\", Georgia, serif",
+      "tamanho": "36px",
+      "entrelinha": "39.6px",
+      "peso": 400,
+      "estilo_fonte": "italic",
+      "espacamento": "-0.72px",
+      "caixa": "none",
+      "exemplo_texto": "Varanda Longa"
+    },
+    {
+      "estilo": "Regular M",
+      "tag": "span",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "classes": "",
+      "familia": "\"Instrument Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "14px",
+      "entrelinha": "22.4px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "normal",
+      "caixa": "none",
+      "exemplo_texto": "menos carbono incorporado que uma casa convencional de mesmo porte"
+    },
+    {
+      "estilo": "Regular P",
+      "tag": "span",
+      "seletor_exemplo": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "classes": "sobrescrito",
+      "familia": "\"Instrument Sans\", \"Helvetica Neue\", Arial, sans-serif",
+      "tamanho": "12px",
+      "entrelinha": "19.2px",
+      "peso": 400,
+      "estilo_fonte": "normal",
+      "espacamento": "2.4px",
+      "caixa": "uppercase",
+      "exemplo_texto": "Arquitetura residencial · terra, madeira e luz"
+    }
+  ],
+  "componentes": {
+    "botoes": [
+      {
+        "tag": "a",
+        "classes": "convite",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "texto": "CONVERSAR SOBRE UM TERRENO",
+        "desabilitado": false,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "a",
+        "classes": "convite convite--vazado",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "texto": "VER OBRAS",
+        "desabilitado": false,
+        "ocorrencias": 1
+      },
+      {
+        "tag": "button",
+        "classes": "convite",
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+        "texto": "AGENDA 2026 ENCERRADA",
+        "desabilitado": true,
+        "ocorrencias": 1
+      }
+    ],
+    "campos": [],
+    "cartoes": []
+  },
+  "layout": {
+    "conteineres": [],
+    "grades": [
+      {
+        "seletor": "body > header:nth-of-type(1)",
+        "classes": "cabecalho coluna",
+        "colunas": "559.203px 209.578px 559.219px",
+        "espaco": "normal"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+        "classes": "abertura coluna",
+        "colunas": "731.391px 540.609px",
+        "espaco": "56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+        "classes": "abertura__rodape",
+        "colunas": "349.688px 349.703px",
+        "espaco": "32px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1)",
+        "classes": "bloco__cabeca",
+        "colunas": "429.328px 858.672px",
+        "espaco": "40px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "classes": "obra revelar",
+        "colunas": "80px 458.656px 286.672px 286.672px 120px",
+        "espaco": "24px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+        "classes": "obra revelar",
+        "colunas": "80px 458.656px 286.672px 286.672px 120px",
+        "espaco": "24px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "classes": "obra revelar",
+        "colunas": "80px 458.656px 286.672px 286.672px 120px",
+        "espaco": "24px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+        "classes": "obra revelar",
+        "colunas": "80px 458.656px 286.672px 286.672px 120px",
+        "espaco": "24px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1)",
+        "classes": "bloco__cabeca",
+        "colunas": "429.328px 858.672px",
+        "espaco": "40px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2)",
+        "classes": "metodo",
+        "colunas": "331.75px 331.75px 331.75px 331.75px",
+        "espaco": "normal"
+      }
+    ],
+    "secoes": [
+      {
+        "seletor": "body > header:nth-of-type(1)",
+        "classes": "cabecalho coluna",
+        "padding": "22px 56px 22px 56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(1)",
+        "classes": "abertura coluna",
+        "padding": "88px 56px 72px 56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(2)",
+        "classes": "bloco coluna",
+        "padding": "110px 56px 110px 56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(3)",
+        "classes": "bloco coluna",
+        "padding": "110px 56px 110px 56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(4)",
+        "classes": "bloco coluna",
+        "padding": "110px 56px 110px 56px"
+      },
+      {
+        "seletor": "body > main:nth-of-type(1) > section:nth-of-type(5)",
+        "classes": "bloco coluna",
+        "padding": "110px 56px 110px 56px"
+      },
+      {
+        "seletor": "body > footer:nth-of-type(1)",
+        "classes": "final coluna",
+        "padding": "28px 56px 40px 56px"
+      }
+    ]
+  }
+}

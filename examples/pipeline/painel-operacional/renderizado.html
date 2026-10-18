@@ -1,0 +1,1078 @@
+<!-- vd: DOM renderizado após o JavaScript, salvo apenas para análise. Não servir. -->
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serra Azul · Painel operacional da rede de abastecimento</title>
+<meta name="description" content="Painel operacional fictício da rede de abastecimento Serra Azul: pressão, vazão, nível dos reservatórios e ocorrências em tempo real.">
+<meta property="og:title" content="Serra Azul · Painel operacional">
+<meta property="og:description" content="Pressão, vazão, reservatórios e ocorrências da rede de abastecimento em um só lugar.">
+<link rel="stylesheet" href="assets/css/fontes.css">
+<script src="assets/js/tailwind-browser.js"></script><style>/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --tracking-tight: -0.025em;
+    --tracking-wider: 0.05em;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --color-papel: #f4f4f0;
+    --color-cartao: #ffffff;
+    --color-grafite: #17181a;
+    --color-grafite-suave: #55595f;
+    --color-fio: #dedfd8;
+    --color-sinal: #e5531a;
+    --color-sinal-texto: #b23d0c;
+    --color-ok: #1d7a46;
+    --color-ok-fundo: #e3f1e8;
+    --color-alerta-texto: #8a5a00;
+    --color-alerta-fundo: #fbf0d6;
+    --color-agua: #1f5f8b;
+    --animate-entrada: entrada 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    --animate-crescer: crescer 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-x-0 {
+    inset-inline: 0px;
+  }
+  .top-0 {
+    top: 0px;
+  }
+  .top-1\/2 {
+    top: calc(1 / 2 * 100%);
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
+  .right-2 {
+    right: calc(var(--spacing) * 2);
+  }
+  .bottom-0 {
+    bottom: 0px;
+  }
+  .left-3 {
+    left: calc(var(--spacing) * 3);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .m-0 {
+    margin: 0px;
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .ml-auto {
+    margin-left: auto;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .size-2 {
+    width: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 2);
+  }
+  .size-4 {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .size-9 {
+    width: calc(var(--spacing) * 9);
+    height: calc(var(--spacing) * 9);
+  }
+  .size-10 {
+    width: calc(var(--spacing) * 10);
+    height: calc(var(--spacing) * 10);
+  }
+  .size-full {
+    width: 100%;
+    height: 100%;
+  }
+  .h-0\.5 {
+    height: calc(var(--spacing) * 0.5);
+  }
+  .h-48 {
+    height: calc(var(--spacing) * 48);
+  }
+  .h-\[31\%\] {
+    height: 31%;
+  }
+  .h-\[64\%\] {
+    height: 64%;
+  }
+  .h-\[76\%\] {
+    height: 76%;
+  }
+  .h-\[82\%\] {
+    height: 82%;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-72 {
+    width: calc(var(--spacing) * 72);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .min-w-\[560px\] {
+    min-width: 560px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .origin-bottom {
+    transform-origin: bottom;
+  }
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .animate-crescer {
+    animation: var(--animate-crescer);
+  }
+  .animate-entrada {
+    animation: var(--animate-entrada);
+  }
+  .animate-ping {
+    animation: var(--animate-ping);
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .place-items-center {
+    place-items: center;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-6 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.divide-y > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-bottom-style: var(--tw-border-style);
+    border-top-style: var(--tw-border-style);
+    border-top-width: calc(1px * var(--tw-divide-y-reverse));
+    border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  }
+  :where(.divide-fio > :not(:last-child)) {
+    border-color: var(--color-fio);
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-r {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-fio {
+    border-color: var(--color-fio);
+  }
+  .bg-agua {
+    background-color: var(--color-agua);
+  }
+  .bg-alerta-fundo {
+    background-color: var(--color-alerta-fundo);
+  }
+  .bg-cartao {
+    background-color: var(--color-cartao);
+  }
+  .bg-grafite {
+    background-color: var(--color-grafite);
+  }
+  .bg-ok {
+    background-color: var(--color-ok);
+  }
+  .bg-ok-fundo {
+    background-color: var(--color-ok-fundo);
+  }
+  .bg-papel {
+    background-color: var(--color-papel);
+  }
+  .bg-papel\/90 {
+    background-color: color-mix(in srgb, #f4f4f0 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-papel) 90%, transparent);
+    }
+  }
+  .bg-sinal {
+    background-color: var(--color-sinal);
+  }
+  .bg-sinal-texto {
+    background-color: var(--color-sinal-texto);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .pr-3 {
+    padding-right: calc(var(--spacing) * 3);
+  }
+  .pl-9 {
+    padding-left: calc(var(--spacing) * 9);
+  }
+  .text-left {
+    text-align: left;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[0\.18em\] {
+    --tw-tracking: 0.18em;
+    letter-spacing: 0.18em;
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-alerta-texto {
+    color: var(--color-alerta-texto);
+  }
+  .text-fio {
+    color: var(--color-fio);
+  }
+  .text-grafite {
+    color: var(--color-grafite);
+  }
+  .text-grafite-suave {
+    color: var(--color-grafite-suave);
+  }
+  .text-ok {
+    color: var(--color-ok);
+  }
+  .text-papel {
+    color: var(--color-papel);
+  }
+  .text-sinal-texto {
+    color: var(--color-sinal-texto);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .backdrop-blur {
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .\[animation-delay\:80ms\] {
+    animation-delay: 80ms;
+  }
+  .\[animation-delay\:100ms\] {
+    animation-delay: 100ms;
+  }
+  .\[animation-delay\:160ms\] {
+    animation-delay: 160ms;
+  }
+  .\[animation-delay\:200ms\] {
+    animation-delay: 200ms;
+  }
+  .\[animation-delay\:240ms\] {
+    animation-delay: 240ms;
+  }
+  .\[animation-delay\:300ms\] {
+    animation-delay: 300ms;
+  }
+  .placeholder\:text-grafite-suave::placeholder {
+    color: var(--color-grafite-suave);
+  }
+  @media (hover: hover) {
+    .hover\:border-grafite:hover {
+      border-color: var(--color-grafite);
+    }
+    .hover\:bg-papel:hover {
+      background-color: var(--color-papel);
+    }
+    .hover\:bg-sinal-texto:hover {
+      background-color: var(--color-sinal-texto);
+    }
+    .hover\:text-grafite:hover {
+      color: var(--color-grafite);
+    }
+    .hover\:underline:hover {
+      text-decoration-line: underline;
+    }
+  }
+  .focus\:border-grafite:focus {
+    border-color: var(--color-grafite);
+  }
+  .focus\:outline-none:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .active\:scale-\[0\.98\]:active {
+    scale: 0.98;
+  }
+  @media (width >= 40rem) {
+    .sm\:inline-flex {
+      display: inline-flex;
+    }
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:ml-0 {
+      margin-left: 0px;
+    }
+    .md\:flex {
+      display: flex;
+    }
+    .md\:px-8 {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+    .md\:py-8 {
+      padding-block: calc(var(--spacing) * 8);
+    }
+    .md\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  @media (width >= 64rem) {
+    .lg\:flex {
+      display: flex;
+    }
+    .lg\:grid {
+      display: grid;
+    }
+    .lg\:grid-cols-\[248px_1fr\] {
+      grid-template-columns: 248px 1fr;
+    }
+  }
+  @media (width >= 80rem) {
+    .xl\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .xl\:grid-cols-\[1\.6fr_1fr\] {
+      grid-template-columns: 1.6fr 1fr;
+    }
+  }
+}
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-sinal);
+    outline-offset: 2px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-divide-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes crescer {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-space-y-reverse: 0;
+      --tw-divide-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+    }
+  }
+}
+</style>
+<style type="text/tailwindcss">
+@theme {
+  --color-papel: #f4f4f0;
+  --color-cartao: #ffffff;
+  --color-grafite: #17181a;
+  --color-grafite-suave: #55595f;
+  --color-fio: #dedfd8;
+  --color-sinal: #e5531a;
+  --color-sinal-texto: #b23d0c;
+  --color-ok: #1d7a46;
+  --color-ok-fundo: #e3f1e8;
+  --color-alerta-texto: #8a5a00;
+  --color-alerta-fundo: #fbf0d6;
+  --color-agua: #1f5f8b;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --animate-entrada: entrada 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-crescer: crescer 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  @keyframes entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes crescer { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+}
+@layer base {
+  :focus-visible { outline: 2px solid var(--color-sinal); outline-offset: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body class="bg-papel text-grafite font-sans antialiased">
+<div class="min-h-screen lg:grid lg:grid-cols-[248px_1fr]">
+
+  <aside class="hidden lg:flex flex-col gap-8 border-r border-fio bg-cartao px-5 py-6" aria-label="Navegação do painel">
+    <a href="#visao-geral" class="flex items-center gap-3 font-semibold tracking-tight text-lg">
+      <span class="grid size-9 place-items-center rounded-lg bg-grafite text-papel"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="droplets" aria-hidden="true" class="lucide lucide-droplets size-5"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path></svg></span>
+      Serra Azul
+    </a>
+    <nav>
+      <ul class="space-y-1 text-sm">
+        <li><a href="#visao-geral" class="flex items-center gap-3 rounded-lg bg-papel px-3 py-2.5 font-medium" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard size-4"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>Visão geral</a></li>
+        <li><a href="#reservatorios" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="waves" aria-hidden="true" class="lucide lucide-waves size-4"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"></path><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"></path><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"></path></svg>Reservatórios</a></li>
+        <li><a href="#ocorrencias" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wrench" aria-hidden="true" class="lucide lucide-wrench size-4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>Ocorrências</a></li>
+        <li><a href="#zonas" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map" aria-hidden="true" class="lucide lucide-map size-4"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path d="M15 5.764v15"></path><path d="M9 3.236v15"></path></svg>Zonas de pressão</a></li>
+      </ul>
+    </nav>
+    <div class="mt-auto rounded-xl border border-fio p-4 text-sm">
+      <p class="font-medium">Turno da noite</p>
+      <p class="mt-1 text-grafite-suave">Equipe B · 4 técnicos em campo</p>
+      <button type="button" class="mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite" disabled="">Passagem de turno às 06:00</button>
+    </div>
+  </aside>
+
+  <div class="min-w-0">
+    <header class="sticky top-0 z-10 flex items-center gap-4 border-b border-fio bg-papel/90 px-5 py-4 backdrop-blur md:px-8">
+      <div class="min-w-0">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-grafite-suave">Rede de abastecimento</p>
+        <h1 class="truncate text-xl font-semibold tracking-tight md:text-2xl">Painel operacional</h1>
+      </div>
+      <div class="ml-auto hidden items-center md:flex">
+        <label for="busca" class="sr-only">Buscar ativo, zona ou ocorrência</label>
+        <div class="relative">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="lucide lucide-search pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite-suave"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+          <input id="busca" type="search" placeholder="Buscar ativo, zona ou ocorrência" class="w-72 rounded-lg border border-fio bg-cartao py-2 pl-9 pr-3 text-sm placeholder:text-grafite-suave focus:border-grafite focus:outline-none">
+        </div>
+      </div>
+      <button type="button" class="relative ml-auto grid size-10 place-items-center rounded-lg border border-fio bg-cartao transition hover:border-grafite md:ml-0" aria-label="Notificações: 3 novas">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell size-4"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+        <span class="absolute right-2 top-2 size-2 rounded-full bg-sinal"></span>
+      </button>
+      <a href="#ocorrencias" class="hidden items-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto sm:inline-flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus size-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Abrir ocorrência
+      </a>
+    </header>
+
+    <main class="space-y-6 px-5 py-6 md:px-8 md:py-8">
+      <section id="visao-geral" aria-labelledby="titulo-visao" class="space-y-6">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 id="titulo-visao" class="text-lg font-semibold tracking-tight">Visão geral · últimas 24 horas</h2>
+            <p class="flex items-center gap-2 text-sm text-grafite-suave">
+              <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-ok"></span></span>
+              Telemetria ao vivo · atualizado há 8 s
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="filter" aria-hidden="true" class="lucide lucide-filter size-4"><path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path></svg>Filtrar</button>
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="download" aria-hidden="true" class="lucide lucide-download size-4"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>Exportar</button>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Pressão média</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="gauge" aria-hidden="true" class="lucide lucide-gauge size-4"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">32,4 <span class="text-base text-grafite-suave">mca</span></p>
+            <p class="mt-2 text-sm text-ok">Dentro da faixa · 25 a 40 mca</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:80ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Vazão distribuída</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="activity" aria-hidden="true" class="lucide lucide-activity size-4"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">418 <span class="text-base text-grafite-suave">L/s</span></p>
+            <p class="mt-2 text-sm text-grafite-suave">+3,1% sobre a mesma hora ontem</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:160ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Perdas estimadas</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="droplets" aria-hidden="true" class="lucide lucide-droplets size-4"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path></svg></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">17,8<span class="text-base text-grafite-suave">%</span></p>
+            <p class="mt-2 text-sm text-sinal-texto">Acima da meta de 15% na zona Norte</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:240ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Ocorrências abertas</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wrench" aria-hidden="true" class="lucide lucide-wrench size-4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">7</p>
+            <p class="mt-2 text-sm text-grafite-suave">2 críticas · tempo médio 1 h 42 min</p>
+          </article>
+        </div>
+
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <figure class="m-0 rounded-xl border border-fio bg-cartao p-5">
+            <figcaption class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium">Vazão × pressão</span>
+              <span class="flex gap-4 font-mono text-xs text-grafite-suave"><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-agua"></span>Vazão</span><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-sinal"></span>Pressão</span></span>
+            </figcaption>
+            <svg viewBox="0 0 640 240" class="mt-4 w-full text-fio" role="img" aria-labelledby="grafico-vazao">
+              <title id="grafico-vazao">Vazão e pressão ao longo das últimas 24 horas: pico de vazão às 7 h e às 19 h, com queda de pressão correspondente</title>
+              <g stroke="currentColor"><line x1="0" y1="40" x2="640" y2="40"></line><line x1="0" y1="100" x2="640" y2="100"></line><line x1="0" y1="160" x2="640" y2="160"></line><line x1="0" y1="220" x2="640" y2="220"></line></g>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172 L640 220 L0 220 Z" fill="#1f5f8b" fill-opacity="0.10"></path>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172" fill="none" stroke="#1f5f8b" stroke-width="2.2"></path>
+              <path d="M0 70 C60 72 90 84 130 120 S190 150 220 132 S300 92 340 98 S420 110 460 140 S540 152 580 116 S620 80 640 78" fill="none" stroke="#e5531a" stroke-width="2.2" stroke-dasharray="6 5"></path>
+              <g fill="#55595f" font-family="IBM Plex Mono, monospace" font-size="11"><text x="0" y="238">00h</text><text x="150" y="238">06h</text><text x="306" y="238">12h</text><text x="462" y="238">18h</text><text x="612" y="238">24h</text></g>
+            </svg>
+          </figure>
+
+          <section id="reservatorios" aria-labelledby="titulo-reservatorios" class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 id="titulo-reservatorios" class="font-medium">Nível dos reservatórios</h2>
+            <div class="mt-5 flex h-48 items-end justify-between gap-3">
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[82%] origin-bottom bg-agua"></div></div><span class="font-mono text-xs">R1 · 82%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[64%] origin-bottom bg-agua [animation-delay:100ms]"></div></div><span class="font-mono text-xs">R2 · 64%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[31%] origin-bottom bg-sinal [animation-delay:200ms]"></div></div><span class="font-mono text-xs text-sinal-texto">R3 · 31%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[76%] origin-bottom bg-agua [animation-delay:300ms]"></div></div><span class="font-mono text-xs">R4 · 76%</span></div>
+            </div>
+            <p class="mt-4 rounded-lg bg-alerta-fundo px-3 py-2 text-sm text-alerta-texto">R3 abaixo de 35%: bombeamento extra programado para 02:30.</p>
+          </section>
+        </div>
+      </section>
+
+      <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+        <section id="ocorrencias" aria-labelledby="titulo-ocorrencias" class="min-w-0 rounded-xl border border-fio bg-cartao">
+          <div class="flex items-center justify-between border-b border-fio p-5">
+            <h2 id="titulo-ocorrencias" class="font-medium">Ocorrências em andamento</h2>
+            <a href="#ocorrencias" class="inline-flex items-center gap-1 text-sm font-medium text-sinal-texto hover:underline">Ver todas<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="lucide lucide-chevron-right size-4"><path d="m9 18 6-6-6-6"></path></svg></a>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[560px] text-left text-sm">
+              <thead class="font-mono text-xs uppercase tracking-wider text-grafite-suave">
+                <tr><th class="px-5 py-3 font-medium">Código</th><th class="px-5 py-3 font-medium">Local</th><th class="px-5 py-3 font-medium">Tipo</th><th class="px-5 py-3 font-medium">Situação</th><th class="px-5 py-3 font-medium">Aberta há</th></tr>
+              </thead>
+              <tbody class="divide-y divide-fio">
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2291</td><td class="px-5 py-3.5">Av. das Palmeiras, 1200</td><td class="px-5 py-3.5">Vazamento em adutora</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-sinal-texto px-2.5 py-1 text-xs font-medium text-white">Crítica</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">2 h 10 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2288</td><td class="px-5 py-3.5">Estação elevatória Norte</td><td class="px-5 py-3.5">Bomba 2 em manutenção</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Em campo</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">5 h 02 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2285</td><td class="px-5 py-3.5">Rua Jacarandá, 87</td><td class="px-5 py-3.5">Baixa pressão</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-ok-fundo px-2.5 py-1 text-xs font-medium text-ok">Resolvendo</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">48 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2279</td><td class="px-5 py-3.5">Reservatório R3</td><td class="px-5 py-3.5">Nível abaixo do alvo</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Monitorando</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">9 h 30 min</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="zonas" aria-labelledby="titulo-zonas" class="rounded-xl border border-fio bg-cartao p-5">
+          <h2 id="titulo-zonas" class="font-medium">Zonas de pressão</h2>
+          <svg viewBox="0 0 320 220" class="mt-4 w-full text-grafite-suave" role="img" aria-labelledby="mapa-zonas">
+            <title id="mapa-zonas">Esquema das quatro zonas de pressão; a zona Norte está destacada por perdas acima da meta</title>
+            <g fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M20 30 L150 20 L170 100 L40 120 Z" fill="#e5531a" fill-opacity="0.12" stroke="#e5531a"></path>
+              <path d="M150 20 L300 40 L290 120 L170 100 Z"></path>
+              <path d="M40 120 L170 100 L180 200 L30 190 Z"></path>
+              <path d="M170 100 L290 120 L300 200 L180 200 Z"></path>
+            </g>
+            <g fill="currentColor" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="500">
+              <text x="62" y="72" fill="#b23d0c">Norte · 22%</text><text x="196" y="74">Leste · 14%</text><text x="66" y="160">Oeste · 13%</text><text x="200" y="160">Sul · 16%</text>
+            </g>
+            <circle cx="96" cy="94" r="5" fill="#e5531a"></circle>
+          </svg>
+          <button type="button" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto active:scale-[0.98]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map" aria-hidden="true" class="lucide lucide-map size-4"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path d="M15 5.764v15"></path><path d="M9 3.236v15"></path></svg>Abrir mapa da zona Norte</button>
+        </section>
+      </div>
+      <p class="pt-2 text-xs text-grafite-suave">Painel fictício com dados de exemplo, criado para o framework Vibe Design.</p>
+    </main>
+  </div>
+</div>
+<script src="assets/js/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+
+
+</body></html>

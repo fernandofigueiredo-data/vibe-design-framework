@@ -1,0 +1,5 @@
+/* Keyframes e animação das estrelas, copiados do bloco <style> inline da fonte */
+@keyframes girar { to { transform: rotate(360deg); } }
+@keyframes pulsar { 0%, 100% { opacity: 0.35; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes cintilar { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.9; } }
+.estrela--viva { animation: cintilar 4.8s ease-in-out infinite; }

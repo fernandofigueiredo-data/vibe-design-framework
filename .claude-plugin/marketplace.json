@@ -1,0 +1,14 @@
+{
+  "name": "vibe-design-framework",
+  "description": "Marketplace do framework Vibe Design: captura, extração de design system e criação de sites.",
+  "owner": {
+    "name": "Fernando Figueiredo"
+  },
+  "plugins": [
+    {
+      "name": "vibe-design",
+      "source": "./",
+      "description": "Skills extrair-design-system e criar-site."
+    }
+  ]
+}

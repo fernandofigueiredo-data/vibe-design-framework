@@ -1,0 +1,60 @@
+{
+  "pasta": "/Users/fernandofigueiredo/Documents/fundamentos-de-vibe-design/vibe-design-framework/examples/pipeline/observatorio-noturno",
+  "criterios": {
+    "K1": {
+      "aprovado": true,
+      "falhas": [],
+      "externas": 0
+    },
+    "K3": {
+      "aprovado": true,
+      "proporcao": 1.0,
+      "limite": 0.95,
+      "divergentes": []
+    },
+    "K2": {
+      "aprovado": true,
+      "pior": 0.0006,
+      "limite": 0.02,
+      "posicoes": [
+        {
+          "posicao": 0.0,
+          "y": 0,
+          "proporcao": 0.0006
+        },
+        {
+          "posicao": 0.25,
+          "y": 765,
+          "proporcao": 0
+        },
+        {
+          "posicao": 0.5,
+          "y": 1531,
+          "proporcao": 0
+        },
+        {
+          "posicao": 0.75,
+          "y": 2297,
+          "proporcao": 0
+        },
+        {
+          "posicao": 1.0,
+          "y": 3063,
+          "proporcao": 0
+        }
+      ],
+      "altura_original": 3963,
+      "altura_captura": 3963,
+      "prints_uniformes": []
+    },
+    "K4": {
+      "aprovado": true,
+      "problemas": []
+    },
+    "K5": {
+      "aprovado": true,
+      "problemas": []
+    }
+  },
+  "aprovado": true
+}

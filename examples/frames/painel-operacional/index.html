@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serra Azul · Painel operacional da rede de abastecimento</title>
+<meta name="description" content="Painel operacional fictício da rede de abastecimento Serra Azul: pressão, vazão, nível dos reservatórios e ocorrências em tempo real.">
+<meta property="og:title" content="Serra Azul · Painel operacional">
+<meta property="og:description" content="Pressão, vazão, reservatórios e ocorrências da rede de abastecimento em um só lugar.">
+<link rel="stylesheet" href="assets/css/fontes.css">
+<script src="assets/js/tailwind-browser.js"></script>
+<style type="text/tailwindcss">
+@theme {
+  --color-papel: #f4f4f0;
+  --color-cartao: #ffffff;
+  --color-grafite: #17181a;
+  --color-grafite-suave: #55595f;
+  --color-fio: #dedfd8;
+  --color-sinal: #e5531a;
+  --color-sinal-texto: #b23d0c;
+  --color-ok: #1d7a46;
+  --color-ok-fundo: #e3f1e8;
+  --color-alerta-texto: #8a5a00;
+  --color-alerta-fundo: #fbf0d6;
+  --color-agua: #1f5f8b;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --animate-entrada: entrada 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-crescer: crescer 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  @keyframes entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes crescer { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+}
+@layer base {
+  :focus-visible { outline: 2px solid var(--color-sinal); outline-offset: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body class="bg-papel text-grafite font-sans antialiased">
+<div class="min-h-screen lg:grid lg:grid-cols-[248px_1fr]">
+
+  <aside class="hidden lg:flex flex-col gap-8 border-r border-fio bg-cartao px-5 py-6" aria-label="Navegação do painel">
+    <a href="#visao-geral" class="flex items-center gap-3 font-semibold tracking-tight text-lg">
+      <span class="grid size-9 place-items-center rounded-lg bg-grafite text-papel"><i data-lucide="droplets" class="size-5"></i></span>
+      Serra Azul
+    </a>
+    <nav>
+      <ul class="space-y-1 text-sm">
+        <li><a href="#visao-geral" class="flex items-center gap-3 rounded-lg bg-papel px-3 py-2.5 font-medium" aria-current="page"><i data-lucide="layout-dashboard" class="size-4"></i>Visão geral</a></li>
+        <li><a href="#reservatorios" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="waves" class="size-4"></i>Reservatórios</a></li>
+        <li><a href="#ocorrencias" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="wrench" class="size-4"></i>Ocorrências</a></li>
+        <li><a href="#zonas" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-grafite-suave transition-colors hover:bg-papel hover:text-grafite"><i data-lucide="map" class="size-4"></i>Zonas de pressão</a></li>
+      </ul>
+    </nav>
+    <div class="mt-auto rounded-xl border border-fio p-4 text-sm">
+      <p class="font-medium">Turno da noite</p>
+      <p class="mt-1 text-grafite-suave">Equipe B · 4 técnicos em campo</p>
+      <button type="button" class="mt-4 w-full rounded-lg border border-fio px-3 py-2 font-medium transition hover:border-grafite" disabled>Passagem de turno às 06:00</button>
+    </div>
+  </aside>
+
+  <div class="min-w-0">
+    <header class="sticky top-0 z-10 flex items-center gap-4 border-b border-fio bg-papel/90 px-5 py-4 backdrop-blur md:px-8">
+      <div class="min-w-0">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-grafite-suave">Rede de abastecimento</p>
+        <h1 class="truncate text-xl font-semibold tracking-tight md:text-2xl">Painel operacional</h1>
+      </div>
+      <div class="ml-auto hidden items-center md:flex">
+        <label for="busca" class="sr-only">Buscar ativo, zona ou ocorrência</label>
+        <div class="relative">
+          <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite-suave"></i>
+          <input id="busca" type="search" placeholder="Buscar ativo, zona ou ocorrência" class="w-72 rounded-lg border border-fio bg-cartao py-2 pl-9 pr-3 text-sm placeholder:text-grafite-suave focus:border-grafite focus:outline-none">
+        </div>
+      </div>
+      <button type="button" class="relative ml-auto grid size-10 place-items-center rounded-lg border border-fio bg-cartao transition hover:border-grafite md:ml-0" aria-label="Notificações: 3 novas">
+        <i data-lucide="bell" class="size-4"></i>
+        <span class="absolute right-2 top-2 size-2 rounded-full bg-sinal"></span>
+      </button>
+      <a href="#ocorrencias" class="hidden items-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto sm:inline-flex">
+        <i data-lucide="plus" class="size-4"></i>Abrir ocorrência
+      </a>
+    </header>
+
+    <main class="space-y-6 px-5 py-6 md:px-8 md:py-8">
+      <section id="visao-geral" aria-labelledby="titulo-visao" class="space-y-6">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 id="titulo-visao" class="text-lg font-semibold tracking-tight">Visão geral · últimas 24 horas</h2>
+            <p class="flex items-center gap-2 text-sm text-grafite-suave">
+              <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-ok"></span></span>
+              Telemetria ao vivo · atualizado há 8 s
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><i data-lucide="filter" class="size-4"></i>Filtrar</button>
+            <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-fio bg-cartao px-3 py-2 text-sm font-medium transition hover:border-grafite"><i data-lucide="download" class="size-4"></i>Exportar</button>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Pressão média</span><i data-lucide="gauge" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">32,4 <span class="text-base text-grafite-suave">mca</span></p>
+            <p class="mt-2 text-sm text-ok">Dentro da faixa · 25 a 40 mca</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:80ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Vazão distribuída</span><i data-lucide="activity" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">418 <span class="text-base text-grafite-suave">L/s</span></p>
+            <p class="mt-2 text-sm text-grafite-suave">+3,1% sobre a mesma hora ontem</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:160ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Perdas estimadas</span><i data-lucide="droplets" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">17,8<span class="text-base text-grafite-suave">%</span></p>
+            <p class="mt-2 text-sm text-sinal-texto">Acima da meta de 15% na zona Norte</p>
+          </article>
+          <article class="animate-entrada rounded-xl border border-fio bg-cartao p-5 [animation-delay:240ms]">
+            <div class="flex items-center justify-between text-sm text-grafite-suave"><span>Ocorrências abertas</span><i data-lucide="wrench" class="size-4"></i></div>
+            <p class="mt-3 font-mono text-3xl font-medium tracking-tight">7</p>
+            <p class="mt-2 text-sm text-grafite-suave">2 críticas · tempo médio 1 h 42 min</p>
+          </article>
+        </div>
+
+        <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+          <figure class="m-0 rounded-xl border border-fio bg-cartao p-5">
+            <figcaption class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium">Vazão × pressão</span>
+              <span class="flex gap-4 font-mono text-xs text-grafite-suave"><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-agua"></span>Vazão</span><span class="flex items-center gap-1.5"><span class="h-0.5 w-4 bg-sinal"></span>Pressão</span></span>
+            </figcaption>
+            <svg viewBox="0 0 640 240" class="mt-4 w-full text-fio" role="img" aria-labelledby="grafico-vazao">
+              <title id="grafico-vazao">Vazão e pressão ao longo das últimas 24 horas: pico de vazão às 7 h e às 19 h, com queda de pressão correspondente</title>
+              <g stroke="currentColor"><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/><line x1="0" y1="220" x2="640" y2="220"/></g>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172 L640 220 L0 220 Z" fill="#1f5f8b" fill-opacity="0.10"/>
+              <path d="M0 180 C60 178 90 160 130 110 S190 70 220 96 S300 150 340 140 S420 120 460 84 S540 70 580 120 S620 170 640 172" fill="none" stroke="#1f5f8b" stroke-width="2.2"/>
+              <path d="M0 70 C60 72 90 84 130 120 S190 150 220 132 S300 92 340 98 S420 110 460 140 S540 152 580 116 S620 80 640 78" fill="none" stroke="#e5531a" stroke-width="2.2" stroke-dasharray="6 5"/>
+              <g fill="#55595f" font-family="IBM Plex Mono, monospace" font-size="11"><text x="0" y="238">00h</text><text x="150" y="238">06h</text><text x="306" y="238">12h</text><text x="462" y="238">18h</text><text x="612" y="238">24h</text></g>
+            </svg>
+          </figure>
+
+          <section id="reservatorios" aria-labelledby="titulo-reservatorios" class="rounded-xl border border-fio bg-cartao p-5">
+            <h2 id="titulo-reservatorios" class="font-medium">Nível dos reservatórios</h2>
+            <div class="mt-5 flex h-48 items-end justify-between gap-3">
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[82%] origin-bottom bg-agua"></div></div><span class="font-mono text-xs">R1 · 82%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[64%] origin-bottom bg-agua [animation-delay:100ms]"></div></div><span class="font-mono text-xs">R2 · 64%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[31%] origin-bottom bg-sinal [animation-delay:200ms]"></div></div><span class="font-mono text-xs text-sinal-texto">R3 · 31%</span></div>
+              <div class="flex h-full flex-1 flex-col items-center justify-end gap-2"><div class="relative w-full flex-1 overflow-hidden rounded-md bg-papel"><div class="animate-crescer absolute inset-x-0 bottom-0 h-[76%] origin-bottom bg-agua [animation-delay:300ms]"></div></div><span class="font-mono text-xs">R4 · 76%</span></div>
+            </div>
+            <p class="mt-4 rounded-lg bg-alerta-fundo px-3 py-2 text-sm text-alerta-texto">R3 abaixo de 35%: bombeamento extra programado para 02:30.</p>
+          </section>
+        </div>
+      </section>
+
+      <div class="grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+        <section id="ocorrencias" aria-labelledby="titulo-ocorrencias" class="min-w-0 rounded-xl border border-fio bg-cartao">
+          <div class="flex items-center justify-between border-b border-fio p-5">
+            <h2 id="titulo-ocorrencias" class="font-medium">Ocorrências em andamento</h2>
+            <a href="#ocorrencias" class="inline-flex items-center gap-1 text-sm font-medium text-sinal-texto hover:underline">Ver todas<i data-lucide="chevron-right" class="size-4"></i></a>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[560px] text-left text-sm">
+              <thead class="font-mono text-xs uppercase tracking-wider text-grafite-suave">
+                <tr><th class="px-5 py-3 font-medium">Código</th><th class="px-5 py-3 font-medium">Local</th><th class="px-5 py-3 font-medium">Tipo</th><th class="px-5 py-3 font-medium">Situação</th><th class="px-5 py-3 font-medium">Aberta há</th></tr>
+              </thead>
+              <tbody class="divide-y divide-fio">
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2291</td><td class="px-5 py-3.5">Av. das Palmeiras, 1200</td><td class="px-5 py-3.5">Vazamento em adutora</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-sinal-texto px-2.5 py-1 text-xs font-medium text-white">Crítica</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">2 h 10 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2288</td><td class="px-5 py-3.5">Estação elevatória Norte</td><td class="px-5 py-3.5">Bomba 2 em manutenção</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Em campo</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">5 h 02 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2285</td><td class="px-5 py-3.5">Rua Jacarandá, 87</td><td class="px-5 py-3.5">Baixa pressão</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-ok-fundo px-2.5 py-1 text-xs font-medium text-ok">Resolvendo</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">48 min</td></tr>
+                <tr class="transition-colors hover:bg-papel"><td class="whitespace-nowrap px-5 py-3.5 font-mono">OC-2279</td><td class="px-5 py-3.5">Reservatório R3</td><td class="px-5 py-3.5">Nível abaixo do alvo</td><td class="px-5 py-3.5"><span class="whitespace-nowrap rounded-full bg-alerta-fundo px-2.5 py-1 text-xs font-medium text-alerta-texto">Monitorando</span></td><td class="whitespace-nowrap px-5 py-3.5 font-mono">9 h 30 min</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="zonas" aria-labelledby="titulo-zonas" class="rounded-xl border border-fio bg-cartao p-5">
+          <h2 id="titulo-zonas" class="font-medium">Zonas de pressão</h2>
+          <svg viewBox="0 0 320 220" class="mt-4 w-full text-grafite-suave" role="img" aria-labelledby="mapa-zonas">
+            <title id="mapa-zonas">Esquema das quatro zonas de pressão; a zona Norte está destacada por perdas acima da meta</title>
+            <g fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M20 30 L150 20 L170 100 L40 120 Z" fill="#e5531a" fill-opacity="0.12" stroke="#e5531a"/>
+              <path d="M150 20 L300 40 L290 120 L170 100 Z"/>
+              <path d="M40 120 L170 100 L180 200 L30 190 Z"/>
+              <path d="M170 100 L290 120 L300 200 L180 200 Z"/>
+            </g>
+            <g fill="currentColor" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="500">
+              <text x="62" y="72" fill="#b23d0c">Norte · 22%</text><text x="196" y="74">Leste · 14%</text><text x="66" y="160">Oeste · 13%</text><text x="200" y="160">Sul · 16%</text>
+            </g>
+            <circle cx="96" cy="94" r="5" fill="#e5531a"/>
+          </svg>
+          <button type="button" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-grafite px-4 py-2.5 text-sm font-medium text-papel transition hover:bg-sinal-texto active:scale-[0.98]"><i data-lucide="map" class="size-4"></i>Abrir mapa da zona Norte</button>
+        </section>
+      </div>
+      <p class="pt-2 text-xs text-grafite-suave">Painel fictício com dados de exemplo, criado para o framework Vibe Design.</p>
+    </main>
+  </div>
+</div>
+<script src="assets/js/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maré — balneabilidade contínua para o litoral paulista</title>
+<meta name="description" content="Maré atualiza a balneabilidade de cada praia a cada coleta automática e explica a causa provável de cada mudança. Projeto fictício de exemplo.">
+<meta property="og:title" content="Maré — balneabilidade contínua">
+<meta property="og:description" content="A praia de hoje, medida hoje: boletim contínuo com a causa provável de cada mudança.">
+<link rel="preload" href="assets/instrument-serif-latin-400-normal_eb2fa9c2b36a.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/observatorio_dd78fa76af3d.css">
+<link rel="stylesheet" href="assets/animacoes.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="moldura topo__barra">
+    <a class="marca" href="#inicio" aria-label="Maré, voltar ao início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14.5" fill="none" stroke="#5fd3bc" stroke-width="1.2"/><path d="M6 19 C10 15 13 23 16 19 S22 15 26 19" fill="none" stroke="#f2b544" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="11" r="3" fill="#f2b544"/></svg>
+      Maré
+    </a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#boletim">Boletim de hoje</a></li>
+        <li><a href="#prefeituras">Prefeituras</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <a class="botao botao--contorno" href="#contato">Agendar conversa</a>
+  </div>
+</header>
+
+<main>
+  <section id="inicio" class="hero" aria-labelledby="titulo-inicio">
+    <svg class="hero__ceu" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle class="estrela--viva" style="animation-delay:4.6s" cx="172" cy="261" r="1.4" fill="#e7ecef" fill-opacity="0.59"/><circle cx="1273" cy="465" r="1.4" fill="#e7ecef" fill-opacity="0.53"/><circle cx="1128" cy="285" r="1.2" fill="#e7ecef" fill-opacity="0.65"/><circle cx="845" cy="125" r="1.4" fill="#e7ecef" fill-opacity="0.25"/><circle cx="414" cy="51" r="0.6" fill="#e7ecef" fill-opacity="0.69"/><circle cx="987" cy="353" r="0.8" fill="#e7ecef" fill-opacity="0.44"/><circle cx="501" cy="519" r="1.0" fill="#e7ecef" fill-opacity="0.68"/><circle cx="1440" cy="267" r="0.6" fill="#e7ecef" fill-opacity="0.63"/><circle cx="129" cy="280" r="1.0" fill="#e7ecef" fill-opacity="0.47"/><circle cx="1262" cy="366" r="1.4" fill="#e7ecef" fill-opacity="0.39"/><circle class="estrela--viva" style="animation-delay:1.9s" cx="1221" cy="192" r="1.2" fill="#e7ecef" fill-opacity="0.45"/><circle cx="843" cy="259" r="0.6" fill="#e7ecef" fill-opacity="0.46"/><circle cx="1156" cy="451" r="1.2" fill="#e7ecef" fill-opacity="0.44"/><circle cx="755" cy="439" r="1.4" fill="#e7ecef" fill-opacity="0.76"/><circle cx="690" cy="269" r="0.6" fill="#e7ecef" fill-opacity="0.55"/><circle cx="1103" cy="425" r="1.4" fill="#e7ecef" fill-opacity="0.73"/><circle cx="148" cy="324" r="1.2" fill="#e7ecef" fill-opacity="0.29"/><circle cx="1273" cy="442" r="0.6" fill="#e7ecef" fill-opacity="0.58"/><circle cx="658" cy="244" r="1.4" fill="#e7ecef" fill-opacity="0.35"/><circle cx="579" cy="519" r="1.4" fill="#e7ecef" fill-opacity="0.68"/><circle class="estrela--viva" style="animation-delay:1.4s" cx="723" cy="249" r="1.2" fill="#e7ecef" fill-opacity="0.46"/><circle cx="387" cy="17" r="1.4" fill="#e7ecef" fill-opacity="0.78"/><circle cx="1157" cy="482" r="1.0" fill="#e7ecef" fill-opacity="0.75"/><circle cx="375" cy="252" r="1.4" fill="#e7ecef" fill-opacity="0.66"/><circle cx="716" cy="226" r="0.6" fill="#e7ecef" fill-opacity="0.7"/><circle cx="456" cy="477" r="0.6" fill="#e7ecef" fill-opacity="0.46"/><circle cx="1032" cy="500" r="1.0" fill="#e7ecef" fill-opacity="0.47"/><circle cx="1390" cy="503" r="1.2" fill="#e7ecef" fill-opacity="0.76"/><circle cx="934" cy="470" r="1.0" fill="#e7ecef" fill-opacity="0.26"/><circle cx="1076" cy="214" r="1.2" fill="#e7ecef" fill-opacity="0.75"/><circle class="estrela--viva" style="animation-delay:0.4s" cx="133" cy="235" r="1.4" fill="#e7ecef" fill-opacity="0.76"/><circle cx="1143" cy="129" r="1.4" fill="#e7ecef" fill-opacity="0.23"/><circle cx="787" cy="140" r="1.0" fill="#e7ecef" fill-opacity="0.29"/><circle cx="451" cy="303" r="1.2" fill="#e7ecef" fill-opacity="0.61"/><circle cx="1350" cy="284" r="1.2" fill="#e7ecef" fill-opacity="0.55"/><circle cx="1380" cy="456" r="1.4" fill="#e7ecef" fill-opacity="0.37"/><circle cx="602" cy="83" r="0.8" fill="#e7ecef" fill-opacity="0.67"/><circle cx="1318" cy="159" r="1.2" fill="#e7ecef" fill-opacity="0.43"/><circle cx="214" cy="420" r="1.2" fill="#e7ecef" fill-opacity="0.21"/><circle cx="153" cy="462" r="0.6" fill="#e7ecef" fill-opacity="0.7"/><circle class="estrela--viva" style="animation-delay:2.3s" cx="931" cy="486" r="0.6" fill="#e7ecef" fill-opacity="0.22"/><circle cx="983" cy="234" r="0.6" fill="#e7ecef" fill-opacity="0.5"/><circle cx="672" cy="322" r="0.8" fill="#e7ecef" fill-opacity="0.29"/><circle cx="748" cy="225" r="1.0" fill="#e7ecef" fill-opacity="0.48"/><circle cx="336" cy="370" r="1.4" fill="#e7ecef" fill-opacity="0.44"/><circle cx="282" cy="479" r="0.6" fill="#e7ecef" fill-opacity="0.59"/><circle cx="1341" cy="25" r="0.8" fill="#e7ecef" fill-opacity="0.49"/><circle cx="977" cy="11" r="1.4" fill="#e7ecef" fill-opacity="0.33"/><circle cx="1271" cy="465" r="0.8" fill="#e7ecef" fill-opacity="0.3"/><circle cx="1216" cy="203" r="1.2" fill="#e7ecef" fill-opacity="0.52"/><circle class="estrela--viva" style="animation-delay:1.3s" cx="1250" cy="199" r="0.8" fill="#e7ecef" fill-opacity="0.41"/><circle cx="717" cy="406" r="1.2" fill="#e7ecef" fill-opacity="0.37"/><circle cx="255" cy="270" r="1.2" fill="#e7ecef" fill-opacity="0.27"/><circle cx="1147" cy="414" r="0.6" fill="#e7ecef" fill-opacity="0.71"/><circle cx="333" cy="496" r="1.2" fill="#e7ecef" fill-opacity="0.59"/><circle cx="588" cy="407" r="0.8" fill="#e7ecef" fill-opacity="0.78"/><circle cx="507" cy="82" r="1.4" fill="#e7ecef" fill-opacity="0.61"/><circle cx="1140" cy="113" r="1.4" fill="#e7ecef" fill-opacity="0.63"/><circle cx="800" cy="295" r="0.8" fill="#e7ecef" fill-opacity="0.54"/><circle cx="810" cy="349" r="0.8" fill="#e7ecef" fill-opacity="0.26"/><circle class="estrela--viva" style="animation-delay:0.3s" cx="380" cy="497" r="0.8" fill="#e7ecef" fill-opacity="0.26"/><circle cx="513" cy="417" r="0.6" fill="#e7ecef" fill-opacity="0.5"/><circle cx="399" cy="435" r="1.0" fill="#e7ecef" fill-opacity="0.76"/><circle cx="232" cy="133" r="0.6" fill="#e7ecef" fill-opacity="0.45"/><circle cx="1293" cy="404" r="1.2" fill="#e7ecef" fill-opacity="0.78"/><circle cx="83" cy="122" r="1.0" fill="#e7ecef" fill-opacity="0.27"/><circle cx="988" cy="300" r="1.0" fill="#e7ecef" fill-opacity="0.39"/><circle cx="657" cy="325" r="1.4" fill="#e7ecef" fill-opacity="0.22"/><circle cx="582" cy="316" r="1.4" fill="#e7ecef" fill-opacity="0.48"/><circle cx="1410" cy="457" r="1.0" fill="#e7ecef" fill-opacity="0.72"/><circle class="estrela--viva" style="animation-delay:3.9s" cx="981" cy="480" r="1.2" fill="#e7ecef" fill-opacity="0.38"/><circle cx="83" cy="372" r="0.6" fill="#e7ecef" fill-opacity="0.37"/><circle cx="476" cy="378" r="0.6" fill="#e7ecef" fill-opacity="0.38"/><circle cx="600" cy="305" r="0.6" fill="#e7ecef" fill-opacity="0.53"/><circle cx="493" cy="292" r="0.6" fill="#e7ecef" fill-opacity="0.3"/><circle cx="177" cy="19" r="1.4" fill="#e7ecef" fill-opacity="0.41"/><circle cx="933" cy="341" r="0.6" fill="#e7ecef" fill-opacity="0.45"/><circle cx="182" cy="216" r="1.2" fill="#e7ecef" fill-opacity="0.34"/><circle cx="606" cy="114" r="0.8" fill="#e7ecef" fill-opacity="0.31"/><circle cx="41" cy="373" r="1.4" fill="#e7ecef" fill-opacity="0.61"/><circle class="estrela--viva" style="animation-delay:0.1s" cx="571" cy="133" r="0.8" fill="#e7ecef" fill-opacity="0.34"/><circle cx="779" cy="217" r="1.0" fill="#e7ecef" fill-opacity="0.28"/><circle cx="903" cy="47" r="0.8" fill="#e7ecef" fill-opacity="0.53"/><circle cx="936" cy="500" r="1.4" fill="#e7ecef" fill-opacity="0.69"/><circle cx="491" cy="271" r="1.0" fill="#e7ecef" fill-opacity="0.23"/><circle cx="1211" cy="326" r="0.8" fill="#e7ecef" fill-opacity="0.48"/><circle cx="1397" cy="353" r="0.8" fill="#e7ecef" fill-opacity="0.76"/><circle cx="1305" cy="208" r="1.0" fill="#e7ecef" fill-opacity="0.77"/><circle cx="335" cy="431" r="1.0" fill="#e7ecef" fill-opacity="0.72"/><circle cx="540" cy="239" r="1.2" fill="#e7ecef" fill-opacity="0.53"/><circle class="estrela--viva" style="animation-delay:0.8s" cx="683" cy="410" r="1.4" fill="#e7ecef" fill-opacity="0.39"/><circle cx="591" cy="252" r="0.6" fill="#e7ecef" fill-opacity="0.77"/><circle cx="1172" cy="434" r="1.2" fill="#e7ecef" fill-opacity="0.68"/><circle cx="920" cy="44" r="1.0" fill="#e7ecef" fill-opacity="0.53"/><circle cx="382" cy="372" r="0.6" fill="#e7ecef" fill-opacity="0.8"/><circle cx="26" cy="113" r="1.4" fill="#e7ecef" fill-opacity="0.38"/><circle cx="64" cy="205" r="1.4" fill="#e7ecef" fill-opacity="0.78"/><circle cx="744" cy="335" r="0.8" fill="#e7ecef" fill-opacity="0.78"/><circle cx="151" cy="74" r="1.2" fill="#e7ecef" fill-opacity="0.4"/><circle cx="376" cy="22" r="1.4" fill="#e7ecef" fill-opacity="0.6"/><circle class="estrela--viva" style="animation-delay:1.7s" cx="273" cy="467" r="1.0" fill="#e7ecef" fill-opacity="0.52"/><circle cx="1401" cy="98" r="0.6" fill="#e7ecef" fill-opacity="0.71"/><circle cx="933" cy="488" r="1.0" fill="#e7ecef" fill-opacity="0.69"/><circle cx="1299" cy="509" r="1.4" fill="#e7ecef" fill-opacity="0.3"/><circle cx="743" cy="93" r="1.4" fill="#e7ecef" fill-opacity="0.29"/><circle cx="41" cy="61" r="0.6" fill="#e7ecef" fill-opacity="0.71"/><circle cx="92" cy="157" r="1.4" fill="#e7ecef" fill-opacity="0.29"/><circle cx="878" cy="66" r="1.0" fill="#e7ecef" fill-opacity="0.49"/><circle cx="1259" cy="378" r="1.2" fill="#e7ecef" fill-opacity="0.36"/><circle cx="434" cy="61" r="1.2" fill="#e7ecef" fill-opacity="0.75"/><path d="M0 600 C240 576 480 624 720 600 S1200 576 1440 600" fill="none" stroke="rgba(214,226,235,0.24)"/><path d="M0 650 C240 626 480 674 720 650 S1200 626 1440 650" fill="none" stroke="rgba(214,226,235,0.12)"/><path d="M0 700 C240 676 480 724 720 700 S1200 676 1440 700" fill="none" stroke="rgba(214,226,235,0.12)"/><path d="M0 750 C240 726 480 774 720 750 S1200 726 1440 750" fill="none" stroke="rgba(214,226,235,0.24)"/></svg>
+    <div class="moldura hero__grade">
+      <div>
+        <span class="rotulo aparecer">Balneabilidade contínua · litoral paulista</span>
+        <h1 id="titulo-inicio" class="aparecer atraso-1">A praia de hoje, medida <em>hoje</em>.</h1>
+        <p class="hero__texto aparecer atraso-2">O Maré troca o boletim semanal por uma leitura que se atualiza a cada coleta automática. Quando uma praia muda de condição, o boletim diz o que provavelmente causou a mudança.</p>
+        <div class="hero__acoes aparecer atraso-3">
+          <a class="botao" href="#contato">Agendar conversa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="botao botao--contorno" href="#boletim">Ver o boletim de hoje</a>
+        </div>
+        <dl class="leituras aparecer atraso-3">
+          <div class="leitura"><dt class="leitura__nome">Pontos de coleta</dt><dd class="leitura__valor" style="margin:0" data-contar="38">38</dd></div>
+          <div class="leitura"><dt class="leitura__nome">Entre amostras</dt><dd class="leitura__valor" style="margin:0">6 h</dd></div>
+          <div class="leitura"><dt class="leitura__nome">Municípios</dt><dd class="leitura__valor" style="margin:0">9</dd></div>
+        </dl>
+      </div>
+      <div class="orbita aparecer atraso-2" aria-hidden="true">
+        <svg viewBox="0 0 520 520">
+          <circle cx="260" cy="260" r="248" fill="none" stroke="rgba(214,226,235,0.12)" stroke-dasharray="1 5"/>
+          <g class="orbita__anel orbita__anel--lento">
+            <circle cx="260" cy="260" r="200" fill="none" stroke="rgba(214,226,235,0.12)"/>
+            <circle cx="260" cy="60" r="5" fill="#e7ecef"/>
+            <circle cx="460" cy="260" r="4" fill="#f2b544"/>
+          </g>
+          <g class="orbita__anel">
+            <circle cx="260" cy="260" r="140" fill="none" stroke="rgba(214,226,235,0.24)" stroke-dasharray="2 7"/>
+            <circle cx="160" cy="161" r="7" fill="#5fd3bc"/>
+          </g>
+          <circle cx="260" cy="260" r="92" fill="#0c131b" stroke="rgba(214,226,235,0.24)"/>
+          <path d="M176 262 C204 236 232 288 260 262 S316 236 344 262" fill="none" stroke="#5fd3bc" stroke-width="3" stroke-linecap="round"/>
+          <path d="M184 292 C210 270 236 314 260 292 S310 270 336 292" fill="none" stroke="#5fd3bc" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="260" cy="214" r="16" fill="#f2b544"/>
+          <circle class="orbita__sinal" cx="388" cy="168" r="9" fill="none" stroke="#f2b544" stroke-width="1.5"/>
+          <circle cx="388" cy="168" r="3" fill="#f2b544"/>
+        </svg>
+        <p class="orbita__legenda"><strong>Praia do Itararé · coleta das 06:00</strong>Própria para banho, abaixo do limite desde ontem</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="secao" aria-labelledby="titulo-como">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Como funciona</span>
+          <h2 id="titulo-como" class="aparecer">Coletar, explicar e avisar.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Amostradores automáticos ficam presos às boias de sinalização. O resto acontece sozinho, mas sempre com um técnico responsável assinando o boletim.</p>
+      </div>
+      <div class="instrumentos">
+        <article class="cartao aparecer">
+          <span class="cartao__numero">01</span>
+          <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
+          <h3>Coletar</h3>
+          <p>Uma amostra a cada seis horas em cada ponto, com temperatura, salinidade e turbidez medidas no mesmo instante.</p>
+        </article>
+        <article class="cartao aparecer atraso-1">
+          <span class="cartao__numero">02</span>
+          <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg></div>
+          <h3>Explicar</h3>
+          <p>Cada mudança vem com a causa provável: chuva nas últimas 24 horas, maré de sizígia, galeria pluvial aberta ou falha do amostrador.</p>
+        </article>
+        <article class="cartao aparecer atraso-2">
+          <span class="cartao__numero">03</span>
+          <div class="cartao__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+          <h3>Avisar</h3>
+          <p>Placas digitais na orla, boletim público e alerta para a equipe da prefeitura quando um ponto passa do limite.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="boletim" class="secao" aria-labelledby="titulo-boletim">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Boletim de hoje</span>
+          <h2 id="titulo-boletim" class="aparecer">Itararé nas últimas 24 horas.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">A faixa clara é o limite para banho. Os dois picos vieram da chuva da madrugada e voltaram ao normal antes do meio-dia.</p>
+      </div>
+      <div class="mapa">
+        <figure class="mapa__grafico aparecer" style="margin:0">
+          <svg viewBox="0 0 720 320" role="img" aria-labelledby="grafico-mare">
+            <title id="grafico-mare">Coliformes na Praia do Itararé nas últimas 24 horas: dois picos de madrugada e retorno ao limite antes do meio-dia</title>
+            <g stroke="rgba(214,226,235,0.12)">
+              <line x1="40" y1="40" x2="700" y2="40"/><line x1="40" y1="120" x2="700" y2="120"/><line x1="40" y1="200" x2="700" y2="200"/><line x1="40" y1="280" x2="700" y2="280"/>
+            </g>
+            <path d="M40 150 H700 V230 H40 Z" fill="rgba(95,211,188,0.10)"/>
+            <path class="traco" d="M40 214 C70 210 90 160 116 84 S150 190 180 172 S214 70 236 60 S270 200 300 206 S380 212 430 210 S520 216 570 208 S650 212 700 214" fill="none" stroke="#f2b544" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="116" cy="84" r="6" fill="#f2b544"/><circle cx="116" cy="84" r="14" fill="none" stroke="#f2b544" stroke-opacity="0.45"/>
+            <circle cx="236" cy="60" r="6" fill="#f2b544"/><circle cx="236" cy="60" r="14" fill="none" stroke="#f2b544" stroke-opacity="0.45"/>
+            <circle cx="430" cy="210" r="6" fill="#5fd3bc"/>
+            <g fill="#9fb0bc" font-family="JetBrains Mono, monospace" font-size="11">
+              <text x="40" y="306">00h</text><text x="200" y="306">06h</text><text x="360" y="306">12h</text><text x="520" y="306">18h</text><text x="672" y="306">24h</text>
+            </g>
+          </svg>
+        </figure>
+        <div class="mapa__lado">
+          <div class="evento aparecer atraso-1">
+            <span class="evento__hora">02:10 · Itararé, ponto 3</span>
+            <p><strong>Acima do limite.</strong> 41 mm de chuva em duas horas e a galeria da Rua Frei Gaspar aberta.</p>
+          </div>
+          <div class="evento aparecer atraso-2">
+            <span class="evento__hora">11:40 · Itararé, ponto 3</span>
+            <p><strong>De volta ao normal.</strong> Maré vazante diluiu a pluma; placa da orla atualizada às 11:42.</p>
+          </div>
+          <div class="evento aparecer atraso-3">
+            <span class="evento__hora">Previsão · próximas 12 h</span>
+            <p><strong>Própria para banho.</strong> Sem chuva prevista para a Baixada Santista.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prefeituras" class="secao" aria-labelledby="titulo-prefeituras">
+    <div class="moldura">
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">Para prefeituras</span>
+          <h2 id="titulo-prefeituras" class="aparecer">Comece por uma praia. Leve para a orla toda.</h2>
+        </div>
+        <p class="secao__intro aparecer atraso-1">Valores de exemplo, por ponto de coleta ativo no mês, com instalação e manutenção dos amostradores incluídas.</p>
+      </div>
+      <div class="planos">
+        <div class="plano aparecer">
+          <span class="plano__nome">Piloto</span>
+          <p class="plano__preco">R$ 890 <small>por ponto / mês</small></p>
+          <ul><li>Até 6 pontos numa mesma praia</li><li>Boletim público e placa digital</li><li>Relatório mensal para o conselho</li></ul>
+          <a class="botao botao--contorno" href="#contato">Falar com a equipe</a>
+        </div>
+        <div class="plano plano--destaque aparecer atraso-1">
+          <span class="plano__nome">Rede estadual</span>
+          <p class="plano__preco">R$ 640 <small>por ponto / mês</small></p>
+          <ul><li>Municípios consorciados e pontos sem limite</li><li>Previsão de 72 horas com dados de chuva</li><li>Integração com o sistema estadual</li></ul>
+          <button class="botao" type="button" disabled>Lista de espera para 2027</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="secao" aria-labelledby="titulo-contato">
+    <div class="moldura contato">
+      <div>
+        <span class="rotulo">Contato</span>
+        <h2 id="titulo-contato" class="aparecer">Qual praia você quer medir primeiro?</h2>
+        <p class="secao__intro aparecer atraso-1">Em uma conversa de 30 minutos mostramos o boletim de uma praia parecida com a sua e o que seria preciso instalar.</p>
+      </div>
+      <form class="formulario aparecer atraso-1" onsubmit="event.preventDefault()">
+        <label for="email">E-mail institucional</label>
+        <input class="campo" id="email" name="email" type="email" placeholder="meioambiente@municipio.sp.gov.br" autocomplete="email">
+        <label for="municipio">Município</label>
+        <input class="campo" id="municipio" name="municipio" type="text" placeholder="Ex.: Santos">
+        <button class="botao" type="submit">Agendar conversa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="moldura rodape__barra">
+    <span>© 2026 Maré. Projeto fictício gerado pela skill criar-site a partir do design system do Observatório.</span>
+    <span>Números e praias usados apenas como exemplo.</span>
+  </div>
+</footer>
+
+<script src="assets/revelacao.js"></script>
+</body>
+</html>
