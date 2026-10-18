@@ -7,5 +7,13 @@
     "name": "Fernando Figueiredo"
   },
   "license": "MIT",
-  "keywords": ["design-system", "frontend", "playwright", "vibe-design", "pt-br"]
+  "keywords": [
+    "design-system",
+    "frontend",
+    "playwright",
+    "vibe-design",
+    "pt-br"
+  ],
+  "homepage": "https://github.com/fernandofigueiredo-data/vibe-design-framework",
+  "repository": "https://github.com/fernandofigueiredo-data/vibe-design-framework"
 }

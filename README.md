@@ -11,7 +11,7 @@ Duas skills do Claude Code, em PT-BR, empacotadas como plugin:
 |---|---|---|
 | ![Frame Observatório](docs/img/frame-observatorio-noturno-1440x900.png) | ![Design system do Observatório](docs/img/ds-observatorio-1440x900.png) | ![Site Maré](docs/img/site-mare-1440x900.png) |
 
-> **In English.** Vibe Design is a Claude Code plugin with two skills. `extrair-design-system` captures a reference web page with full fidelity (offline replay, no injected CSS, no anti-bot evasion) and extracts a verifiable design system: a navigable `design-system.html`, a `STACK.md` and a machine-readable `manifesto-ds.json`. `criar-site` builds a new site from one or two design systems, one section at a time, with human approval checkpoints. Every step is checked by deterministic scripts (capture K1–K5, design system A1–A12, site B1–B13), so results don't depend on model luck. The only dependency is Playwright. Install it with `claude plugin marketplace add <owner>/vibe-design-framework`, then `claude plugin install vibe-design@vibe-design-framework` (see [Instalação](#instalação)). Docs are in Brazilian Portuguese.
+> **In English.** Vibe Design is a Claude Code plugin with two skills. `extrair-design-system` captures a reference web page with full fidelity (offline replay, no injected CSS, no anti-bot evasion) and extracts a verifiable design system: a navigable `design-system.html`, a `STACK.md` and a machine-readable `manifesto-ds.json`. `criar-site` builds a new site from one or two design systems, one section at a time, with human approval checkpoints. Every step is checked by deterministic scripts (capture K1–K5, design system A1–A12, site B1–B13), so results don't depend on model luck. The only dependency is Playwright. Install it with `claude plugin marketplace add fernandofigueiredo-data/vibe-design-framework`, then `claude plugin install vibe-design@vibe-design-framework` (see [Instalação](#instalação)). Docs are in Brazilian Portuguese.
 
 ## Por que existe
 
@@ -50,7 +50,7 @@ Resultados registrados em [docs/validacao/](docs/validacao/): os três frames au
 
 Requisitos: [Claude Code](https://code.claude.com) e Python 3.11+.
 
-1. Adicione o marketplace: `claude plugin marketplace add <owner>/vibe-design-framework`
+1. Adicione o marketplace: `claude plugin marketplace add fernandofigueiredo-data/vibe-design-framework`
 2. Instale o plugin: `claude plugin install vibe-design@vibe-design-framework`
 3. Instale o Playwright: `pip install playwright`
 4. Baixe o Chromium: `python3 -m playwright install chromium`
