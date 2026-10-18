@@ -1,6 +1,17 @@
 # Vibe Design
 
+[![testes](https://github.com/fernandofigueiredo-data/vibe-design-framework/actions/workflows/testes.yml/badge.svg)](https://github.com/fernandofigueiredo-data/vibe-design-framework/actions/workflows/testes.yml)
+[![licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)](LICENSE)
+![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-informational)
+
 **Capture uma referência com fidelidade, extraia o design system dela e construa um site novo, em etapas, com cada passo verificado por script.**
+
+| O quê | Resultado | Evidência |
+|---|---|---|
+| Captura fiel de 6 páginas (3 frames autorais e 3 páginas públicas reais) | Diferença visual de no máximo 0,53%, 100% dos estilos calculados iguais e funcionamento com a rede bloqueada | [captura.md](docs/validacao/captura.md) |
+| Design systems extraídos dessas 6 páginas | 6 de 6 aprovados nos 12 critérios, incluindo 2 traduzidos do inglês | [design-system.md](docs/validacao/design-system.md) |
+| Site gerado a partir de um design system | 13 de 13 critérios, sem nenhum desvio declarado | [site.md](docs/validacao/site.md) |
+| Testes automatizados | 24 testes, 9 deles provando que os verificadores reprovam defeitos | [testes.md](docs/validacao/testes.md) |
 
 Duas skills do Claude Code, em PT-BR, empacotadas como plugin:
 
@@ -12,6 +23,15 @@ Duas skills do Claude Code, em PT-BR, empacotadas como plugin:
 | ![Frame Observatório](docs/img/frame-observatorio-noturno-1440x900.png) | ![Design system do Observatório](docs/img/ds-observatorio-1440x900.png) | ![Site Maré](docs/img/site-mare-1440x900.png) |
 
 > **In English.** Vibe Design is a Claude Code plugin with two skills. `extrair-design-system` captures a reference web page with full fidelity (offline replay, no injected CSS, no anti-bot evasion) and extracts a verifiable design system: a navigable `design-system.html`, a `STACK.md` and a machine-readable `manifesto-ds.json`. `criar-site` builds a new site from one or two design systems, one section at a time, with human approval checkpoints. Every step is checked by deterministic scripts (capture K1–K5, design system A1–A12, site B1–B13), so results don't depend on model luck. The only dependency is Playwright. Install it with `claude plugin marketplace add fernandofigueiredo-data/vibe-design-framework`, then `claude plugin install vibe-design@vibe-design-framework` (see [Instalação](#instalação)). Docs are in Brazilian Portuguese.
+
+## O que este projeto demonstra
+
+- **Pipeline em etapas com contrato entre elas.** Captura → inventário → design system → site. Cada etapa consome o artefato da anterior (`captura.json`, `manifesto-ds.json`) e grava o seu, sem depender de memória ou contexto do modelo.
+- **Contrato de dados.** O `manifesto-ds.json` define o universo permitido: classes, cores, fontes, keyframes e tipografia medida no navegador. As etapas seguintes são validadas contra ele, como contra um schema.
+- **Testes de qualidade no estilo *data contracts*.** São 30 critérios determinísticos: 5 de captura (K1–K5), 12 de design system (A1–A12) e 13 de site (B1–B13). Cada execução gera um relatório em JSON ou Markdown.
+- **Medição em vez de opinião.** Diferença de pixels entre prints do original e da cópia, proporção de estilos calculados iguais, contraste WCAG e transbordo horizontal por largura de tela.
+- **Engenharia com LLMs.** Cada regra das skills aponta o princípio ou a decisão de onde veio, e a conferência é feita por scripts, não por autoavaliação do modelo.
+- **Reprodutibilidade.** Ambiente travado com `uv.lock`, CI rodando os testes a cada push, exemplos autorais versionados e licenças de terceiros documentadas.
 
 ## Por que existe
 
@@ -38,13 +58,15 @@ URL ──► capturar.py ──► referência local (index.html + assets + cap
 
 ## O que é verificado
 
+K são os critérios de captura, A os de design system e B os de site. A definição completa de cada um está no cabeçalho do script verificador correspondente.
+
 | Etapa | Critérios | Exemplos |
 |---|---|---|
 | Captura | K1–K5 | Funciona com a rede bloqueada; prints em 5 posições diferem ≤ 2% do original; ≥ 95% dos estilos calculados iguais; nenhuma tag ou atributo novo; extensões coerentes. |
 | Design system | A1–A12 | Nenhum arquivo original alterado; hero com a mesma árvore de tags e classes; classes, cores, fontes e keyframes ⊆ fonte; rótulo `tamanho / entrelinha` igual ao medido; tudo em PT-BR. |
 | Site | B1–B13 | Seções iguais ao plano; classes e cores ⊆ manifestos; sem requisições a terceiros; sem rolagem horizontal em 360/768/1440 px; contraste AA, foco visível, `prefers-reduced-motion`; metadados e headings. |
 
-Resultados registrados em [docs/validacao/](docs/validacao/): os três frames autorais e três páginas públicas reais passam em K1–K5 (pior diferença visual de 0,53%); os design systems do Observatório (frame em PT-BR) e de uma página real em inglês passam em A1–A12; o site Maré passa em B1–B13.
+Resultados registrados em [docs/validacao/](docs/validacao/): os três frames autorais e três páginas públicas reais passam em K1–K5 (pior diferença visual de 0,53%) e em A1–A12; o site Maré passa em B1–B13.
 
 ## Instalação
 
